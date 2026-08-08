@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Барселона · Отчёт о поиске объекта</title>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html,body{margin:0;max-width:100%;overflow-x:clip}
+img{max-width:100%;height:auto;display:block}
+:root{
+ --bg:#faf8f5;--card:#fff;--ink:#1c1a17;--ink2:#5b544a;--ink3:#8b8276;
+ --line:#e4ded4;--line2:#f1ece5;--acc:#8a5233;--accs:#f6efe8;
+ --good:#3d6b4a;--warn:#8f6008;--bad:#9b3226;
+ --sh:0 1px 2px rgba(28,26,23,.04),0 10px 30px -14px rgba(28,26,23,.16);}
+@media (prefers-color-scheme:dark){:root{
+ --bg:#141210;--card:#1d1a17;--ink:#f1ece4;--ink2:#b5ab9b;--ink3:#8a8073;
+ --line:#302a25;--line2:#252019;--acc:#cd9366;--accs:#2b2119;
+ --good:#82b490;--warn:#d3a44e;--bad:#d38678;
+ --sh:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.65);}}
+:root[data-theme="dark"]{--bg:#141210;--card:#1d1a17;--ink:#f1ece4;--ink2:#b5ab9b;--ink3:#8a8073;
+ --line:#302a25;--line2:#252019;--acc:#cd9366;--accs:#2b2119;--good:#82b490;--warn:#d3a44e;--bad:#d38678;
+ --sh:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.65);}
+:root[data-theme="light"]{--bg:#faf8f5;--card:#fff;--ink:#1c1a17;--ink2:#5b544a;--ink3:#8b8276;
+ --line:#e4ded4;--line2:#f1ece5;--acc:#8a5233;--accs:#f6efe8;--good:#3d6b4a;--warn:#8f6008;--bad:#9b3226;
+ --sh:0 1px 2px rgba(28,26,23,.04),0 10px 30px -14px rgba(28,26,23,.16);}
+body{background:var(--bg);color:var(--ink);font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,44px)}
+h1,h2,h3{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-weight:600;letter-spacing:-.012em}
+header{border-bottom:1px solid var(--line);padding:clamp(36px,7vw,74px) 0 clamp(26px,5vw,44px)}
+.eyebrow{font-size:.72rem;letter-spacing:.17em;text-transform:uppercase;color:var(--acc);font-weight:600;margin:0 0 14px}
+h1{font-size:clamp(1.9rem,5vw,3.05rem);line-height:1.12;margin:0 0 18px;max-width:22ch}
+.lede{font-size:clamp(1rem,2.2vw,1.14rem);color:var(--ink2);max-width:66ch;margin:0}
+.meta{margin-top:24px;font-size:.83rem;color:var(--ink3);display:flex;flex-wrap:wrap;gap:8px 22px}
+section{padding:clamp(38px,5.5vw,64px) 0;border-bottom:1px solid var(--line2)}
+.sec-head{margin:0 0 8px;font-size:.72rem;letter-spacing:.17em;text-transform:uppercase;color:var(--acc);font-weight:600}
+h2{font-size:clamp(1.4rem,3.4vw,2rem);margin:0 0 14px;max-width:30ch}
+h3{font-size:clamp(1.05rem,2.2vw,1.28rem);margin:30px 0 10px}
+.sec-intro{color:var(--ink2);max-width:72ch;margin:0 0 30px}
+p{max-width:72ch}
+.note{background:var(--accs);border:1px solid var(--line);border-radius:4px;padding:17px 21px;margin:22px 0;font-size:.92rem;color:var(--ink2);max-width:76ch}
+.note strong{color:var(--ink)}
+.note ul{margin:9px 0 0;padding-left:20px}.note li{margin-bottom:6px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:clamp(14px,2.5vw,26px);margin:8px 0 30px}
+.stat{border-top:2px solid var(--ink);padding-top:12px}
+.stat .n{font-family:"Iowan Old Style",Georgia,serif;font-size:clamp(1.7rem,4.2vw,2.4rem);line-height:1.05;display:block}
+.stat .l{font-size:.8rem;color:var(--ink2);margin-top:5px;display:block}
+/* таблицы */
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);
+ border-radius:5px;background:var(--card);max-width:100%;margin:22px 0}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th,td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--line2);vertical-align:top}
+th{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:600;
+ background:var(--accs);white-space:nowrap;position:sticky;top:0}
+tr:last-child td{border-bottom:0}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.ok{color:var(--good);font-weight:600}.no{color:var(--bad);font-weight:600}.mid{color:var(--warn);font-weight:600}
+/* шаги */
+.steps{list-style:none;padding:0;margin:24px 0;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:0 0 22px 52px;max-width:74ch}
+.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:0;
+ font-family:"Iowan Old Style",Georgia,serif;font-size:1.05rem;color:var(--acc);font-weight:600;
+ width:36px;height:36px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card)}
+.steps li strong{display:block;margin-bottom:4px}
+.steps li span{color:var(--ink2);font-size:.94rem}
+/* карточки продуктов */
+.prods{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(14px,2vw,20px);margin:26px 0}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px 22px;box-shadow:var(--sh)}
+.prod h4{font-family:"Iowan Old Style",Georgia,serif;font-size:1.05rem;margin:0 0 8px;font-weight:600}
+.prod p{font-size:.89rem;color:var(--ink2);margin:0 0 12px}
+.prod .tag{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);font-weight:700;display:block;margin-bottom:9px}
+.lnk{font-size:.85rem;color:var(--acc);text-decoration:none;font-weight:600;border-bottom:1px solid currentColor;padding-bottom:1px}
+.lnk:hover{opacity:.72}
+/* правки */
+.fixes{list-style:none;padding:0;margin:20px 0}
+.fixes li{border-left:2px solid var(--bad);padding:2px 0 2px 16px;margin-bottom:18px;max-width:74ch}
+.fixes b{display:block;font-size:.94rem;margin-bottom:3px}
+.fixes span{font-size:.89rem;color:var(--ink2)}
+footer{padding:44px 0 64px;color:var(--ink3);font-size:.85rem}
+footer p{max-width:72ch}
+@media (max-width:760px){
+ .tbl-scroll::after{content:"→ таблица прокручивается вбок";display:block;padding:8px 15px;
+  font-size:.74rem;color:var(--ink3);border-top:1px solid var(--line2)}
+ .steps li{padding-left:44px}.steps li::before{width:31px;height:31px;font-size:.92rem}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Отчёт о проделанной работе</p>
+  <h1>Поиск пентхауса в Барселоне: что было сделано</h1>
+  <p class="lede">Задача — найти пентхаус или дуплекс в районе Eixample рядом с Passeig de Gràcia: от 300 м², минимум 4 спальни, 2–3 санузла, парковка, высокие потолки, классический интерьер, желательно бассейн и терраса. Бюджет по ходу работы расширен с 6,0–6,5 до 5,0–6,5 млн €.</p>
+  <p class="meta"><span>8 августа 2026</span><span>Один рабочий день</span><span>Результат: <a class="lnk" href="/">подборка на dawa.dscff.es</a></span></p>
+</header>
+
+<section>
+  <p class="sec-head">Коротко</p>
+  <h2>Итог в цифрах</h2>
+  <div class="stats">
+    <div class="stat"><span class="n">285</span><span class="l">объявлений Idealista выгружено полностью (всё дороже 3 млн € по Барселоне)</span></div>
+    <div class="stat"><span class="n">51</span><span class="l">из них попадает в коридор 5,0–6,5 млн €</span></div>
+    <div class="stat"><span class="n">21</span><span class="l">объект отобран, проверен и описан на сайте</span></div>
+    <div class="stat"><span class="n">261</span><span class="l">фотография скачана и размещена, без водяных знаков</span></div>
+  </div>
+  <p>Работа состояла из четырёх частей: полная выгрузка порталов, отдельный поиск того, что на порталы не попадает, ручная проверка каждого объекта против исходной страницы продавца и сборка результата в один документ с фотографиями.</p>
+</section>
+
+<section>
+  <p class="sec-head">Часть 1</p>
+  <h2>Где искали и что каждый источник дал</h2>
+  <p class="sec-intro">Проверялись три слоя: массовые порталы, закрытые базы обмена между агентствами (то, откуда агентства берут объекты до публикации) и личные витрины премиальных агентств.</p>
+
+  <h3>Порталы и агрегаторы</h3>
+  <div class="tbl-scroll">
+  <table>
+    <thead><tr><th>Источник</th><th>Что сделано</th><th>Результат</th></tr></thead>
+    <tbody>
+      <tr><td>Idealista</td><td>Полный срез по Барселоне без ценового потолка, от 3 млн €; отдельно каждая карточка целиком</td><td class="ok">285 объявлений, основа подборки</td></tr>
+      <tr><td>Habitaclia</td><td>Проход по áticos и dúplex Eixample</td><td>Пересекается с Idealista, нового не дал</td></tr>
+      <tr><td>Pisos.com</td><td>То же</td><td>Нового не дал</td></tr>
+      <tr><td>Fotocasa</td><td>5 попыток через разные каналы</td><td class="no">Блокирует по геолокации, не пройден</td></tr>
+      <tr><td>Витрины агентств</td><td>Lucas Fox, Sotheby's, Engel&nbsp;&amp;&nbsp;Völkers, Bcn Advisors, aProperties, Christie's, ATIPIKA, CO Real Estate, Withfor, Max Ricart, Finques Majes, Balzaretti</td><td class="ok">Дали объекты, которых на порталах нет</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Закрытые базы обмена между агентствами</h3>
+  <p>Отдельно раскопан вопрос «откуда агентства берут объекты до порталов». Это межагентские базы, куда риелторы выкладывают объекты для коллег. Проверены все, до которых удалось добраться.</p>
+  <div class="tbl-scroll">
+  <table>
+    <thead><tr><th>База</th><th>Объём</th><th>Сколько дороже 3 млн €</th><th>Вывод</th></tr></thead>
+    <tbody>
+      <tr><td>api.cat</td><td class="num">20 196</td><td class="num">11</td><td>Открытая витрина выгружена полностью</td></tr>
+      <tr><td>Inmoweb</td><td class="num">250 000+</td><td class="num">—</td><td>Утекает на сайты 35 проверенных агентств-участников</td></tr>
+      <tr><td>mls.es</td><td class="num">17 по Барселоне</td><td class="num">0</td><td>Дорогого сегмента нет</td></tr>
+      <tr><td>Portal Nexia</td><td class="num">15</td><td class="num">1</td><td>Одна карточка оказалась подделкой со стоковыми фотографиями</td></tr>
+      <tr><td>UP Barcelona</td><td class="num">15</td><td class="num">0</td><td>—</td></tr>
+      <tr><td>Apialia</td><td class="num">77</td><td class="num">0</td><td>—</td></tr>
+      <tr><td>Resales Online</td><td class="num">—</td><td class="num">—</td><td>Барселону не покрывает вообще</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note">
+    <strong>Главный вывод по этому слою.</strong> В сегменте дороже 3 млн € межагентские базы практически пусты — из 20 тысяч объектов api.cat в нужную цену попадает 11 штук, и те дублируют порталы. Настоящий закрытый рынок в этих деньгах — это личные картотеки Lucas Fox, Sotheby's, Engel&nbsp;&amp;&nbsp;Völkers и Bcn Advisors, куда попадают только по звонку. Поэтому на сайте отдельным блоком собраны объекты «цена по запросу» — их не показывают публично, цену называют при обращении.
+  </div>
+  <p>В личные кабинеты агентов api.cat не заходили — там контакты собственников, и доступ туда закрыт паролем. Это уже обход контроля доступа, а не сбор информации. Собирались только открытые витрины.</p>
+</section>
+
+<section>
+  <p class="sec-head">Часть 2</p>
+  <h2>Как искали</h2>
+  <ol class="steps">
+    <li><strong>Выгрузка без ценового фильтра</strong><span>Ценовые фильтры на порталах выбрасывают объекты с пометкой «Precio a consultar» — а это как раз премиальный сегмент. Поэтому проходы делались без фильтра цены, с сортировкой по площади, и цена отсекалась уже на своей стороне.</span></li>
+    <li><strong>Каждая карточка открывалась целиком</strong><span>Списки на портале показывают три строки. Полные характеристики, описание продавца, состояние здания, условия по парковке и мебели есть только внутри карточки — все они выгружались отдельно.</span></li>
+    <li><strong>Фотографии скачаны в архив</strong><span>Ссылки на фото у порталов подписанные и умирают примерно за сутки. Все 261 фотографию скачали и положили рядом с документом, поэтому подборка не «протухнет» и будет открываться через месяц.</span></li>
+    <li><strong>Дубли сведены к реальным объектам</strong><span>Один объект часто продают три-четыре агентства сразу, с разными данными. Например, восемь объявлений о пентхаусах в Eixample оказались четырьмя реальными квартирами: у одной площадь заявлена как 508 и как 284 м², у другой цена расходится на 380 тысяч € между двумя продавцами. Такие расхождения вынесены в текст карточек.</span></li>
+    <li><strong>Проверка каждого факта против страницы продавца</strong><span>Цена, площадь, спальни, санузлы, парковка, потолки — всё сверялось с исходным текстом. Ничего не досочинялось: если данных нет, так и написано.</span></li>
+  </ol>
+</section>
+
+<section>
+  <p class="sec-head">Часть 3</p>
+  <h2>Что нашли</h2>
+  <div class="stats">
+    <div class="stat"><span class="n">15</span><span class="l">основных объектов: 13 с ценой, 2 «по запросу»</span></div>
+    <div class="stat"><span class="n">6</span><span class="l">объектов в Sant Gervasi-Galvany — ближайшее к Eixample</span></div>
+    <div class="stat"><span class="n">12</span><span class="l">дополнительных вариантов без бассейна отдельным блоком</span></div>
+    <div class="stat"><span class="n">192</span><span class="l">проверенных характеристики в карточках</span></div>
+  </div>
+  <p>Полностью совпадающих с исходным заданием объектов на рынке немного, и это не следствие неполного поиска. Сочетание «Eixample + от 300 м² + бассейн + парковка + 4 спальни + до 6,5 млн €» само по себе редкое: бассейн на террасе в старом квартале Барселоны требует усиления перекрытий, и такие объекты единичны.</p>
+  <div class="note">
+    <strong>Отдельно про локацию.</strong> Проверка по подрайонам показала: в коридоре 5,0–6,5 млн € в Eixample девять объектов, в настоящем центре — Ciutat Vella и Vila de Gràcia — <strong>ноль</strong>. В Zona Alta (Sant Gervasi, Sarrià, Pedralbes) — 27. Поэтому раздел «рядом с центром» честно назван Sant Gervasi-Galvany: это ближайшее к Eixample из того, что есть на рынке, но формально это Zona Alta, а не центр.
+  </div>
+  <p>Объекты с пометкой «цена по запросу» включены с прямым указанием, что цену нужно узнавать у продавца. По характеристикам они подходят, и отбрасывать их было бы неправильно.</p>
+</section>
+
+<section>
+  <p class="sec-head">Часть 4</p>
+  <h2>Контроль качества: что перепроверяли и что нашли</h2>
+  <p class="sec-intro">Собранное отдельно перепроверялось построчно против исходных страниц. Ниже — реальные ошибки, которые эта проверка поймала и которые были исправлены до публикации.</p>
+  <ul class="fixes">
+    <li><b>Пропущенная цена лучшего объекта</b><span>В заголовке страницы стояло «Precio a consultar», но в тексте ниже прямым текстом: «El precio total de venta es de 6.500.000 €». Объект чуть не ушёл в блок «цена неизвестна». Позже цена подтвердилась вторым продавцом — та же сумма.</span></li>
+    <li><b>Чужая фотография в карточке</b><span>К объекту Lucas Fox было подставлено изображение совсем другой квартиры от другого агентства. Заменено на верное.</span></li>
+    <li><b>Чужая сноска</b><span>Примечание «мебель в стоимость не входит» относилось к одному объекту, а стояло у другого. Удалено.</span></li>
+    <li><b>Потерянная парковка</b><span>У одного объекта машиноместо включено в цену, и это не было указано. Парковка — обязательное требование, так что упустить это было критично.</span></li>
+    <li><b>Пропавший квалификатор</b><span>«20 пентхаусов с бассейном в Барселоне» — на самом деле речь шла только о тех, что дороже 3 млн €. Формулировка исправлена.</span></li>
+    <li><b>Заниженная стоимость аренды гаража</b><span>Было указано 125–260 € в месяц, фактически по собранным данным 85–260 €.</span></li>
+    <li><b>Сужение зоны поиска</b><span>Часть объектов за пределами Eixample оказалась выброшена, хотя в задании такого ограничения не было. Возвращены отдельным разделом.</span></li>
+  </ul>
+  <p>Проверялась и вёрстка: обнаружилось, что при сборке страницы потерялись стили таблиц, и сравнительная матрица вылезала бы за экран телефона. Исправлено до публикации — таблицы теперь прокручиваются внутри своего блока.</p>
+</section>
+
+<section>
+  <p class="sec-head">Выходные продукты</p>
+  <h2>Что есть на руках по итогам</h2>
+  <div class="prods">
+    <div class="prod">
+      <span class="tag">Основное</span>
+      <h4>Подборка объектов</h4>
+      <p>Девять разделов: главное, объекты с ценами, сравнительная матрица, объекты «цена по запросу», как устроен закрытый рынок, риски, зона рядом с центром, дополнительные варианты, что делать дальше.</p>
+      <a class="lnk" href="/">Открыть подборку →</a>
+    </div>
+    <div class="prod">
+      <span class="tag">По каждому объекту</span>
+      <h4>Фотогалереи</h4>
+      <p>177 фотографий на странице, листаются кнопками и свайпом на телефоне. Все скачаны в архив, ссылки не протухнут. Без водяных знаков.</p>
+    </div>
+    <div class="prod">
+      <span class="tag">По каждому объекту</span>
+      <h4>Полные данные и описания</h4>
+      <p>192 проверенные характеристики, 121 абзац описаний с исходных страниц продавцов, 73 отдельных предупреждения «на что обратить внимание» — расхождения в данных, состояние здания, что не входит в цену.</p>
+    </div>
+    <div class="prod">
+      <span class="tag">Инфраструктура</span>
+      <h4>Отдельный адрес с защищённым соединением</h4>
+      <p>Подборка живёт на собственном поддомене dawa.dscff.es, сертификат выпущен, весь трафик принудительно переводится на https. Открывается с телефона в нормальном виде.</p>
+    </div>
+    <div class="prod">
+      <span class="tag">Архив</span>
+      <h4>Все промежуточные версии</h4>
+      <p>Десять версий документа сохранены по порядку, ни одна не перезаписана — к любой можно вернуться. Исходные выгрузки тоже сохранены целиком.</p>
+    </div>
+    <div class="prod">
+      <span class="tag">Справочно</span>
+      <h4>Карта закрытого рынка</h4>
+      <p>Разобрано, как устроены межагентские базы, какие из них живые, какие пустые, и почему в этих деньгах объекты ходят по личным картотекам, а не по базам.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="sec-head">Честно</p>
+  <h2>Что осталось непокрытым</h2>
+  <ul>
+    <li><strong>Fotocasa.</strong> Портал закрывается от запросов из-за пределов Испании, пять попыток обхода результата не дали. Пересечение с Idealista там высокое, но полностью исключить, что на нём есть что-то своё, нельзя.</li>
+    <li><strong>Глубокий проход по Savills и ещё одиннадцати агентствам</strong> (Forcadell, Amat, Vivendex, Oi Realtor и другие) начат, но не закончен — упёрлись в технический лимит. Это следующий шаг, если нужно расширять список.</li>
+    <li><strong>Международные порталы</strong> — Kyero, ThinkSpain, Green-Acres, Rightmove — не проверены. Они обычно перепубликуют то же самое, но проверить стоит.</li>
+    <li><strong>Личные картотеки агентств.</strong> Их нельзя получить сбором информации в принципе — только звонком и разговором. По четырём агентствам понятно, к кому обращаться.</li>
+  </ul>
+  <p>Ни один объект в подборке не придуман: каждая цифра взята со страницы продавца, у каждого объекта есть ссылка на источник. Где данные противоречат друг другу — это прямо написано в карточке, а не сглажено.</p>
+</section>
+
+<footer>
+  <p>Подборка объектов и этот отчёт — <a class="lnk" href="/">dawa.dscff.es</a>. Данные актуальны на 8 августа 2026 года. Объекты в этом сегменте уходят с рынка быстро, цены и наличие стоит перепроверять при обращении.</p>
+</footer>
+
+</div>
+</body>
+</html>
