@@ -93,7 +93,9 @@ h2{font-size:clamp(1.4rem,3.4vw,2rem);margin:0 0 14px;max-width:28ch}
 .ex-body{padding:17px 19px}
 .exgal{position:relative;background:#000;aspect-ratio:4/3;overflow:hidden;touch-action:pan-y;
  border-bottom:1px solid var(--line)}
-.exgal .gal-btn{width:34px;height:34px;font-size:1.3rem}
+.exgal .gal-btn{width:38px;height:38px;font-size:1.3rem}
+/* на телефоне кнопка листания должна попадать под палец */
+@media (max-width:760px){.exgal .gal-btn{width:44px;height:44px;font-size:1.5rem}}
 .exgal .gal-btn.prev{left:8px}.exgal .gal-btn.next{right:8px}
 .exgal .gal-count{right:8px;bottom:8px;font-size:.7rem;padding:3px 8px}
 .exgal.noimg{display:flex;align-items:center;justify-content:center;background:var(--accs);
