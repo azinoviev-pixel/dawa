@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="same-origin">
+<title>Варианты сайта для Дарьи</title><link rel="stylesheet" href="/daria-select/viewer.css">
+<script defer src="/daria-select/viewer.js"></script>
+</head>
+<body data-mode="share">
+<header class="toolbar">
+  <div class="topline">
+    <div class="identity"><span class="eyebrow" id="heading">Выбираем сайт для Дарьи</span><h1 id="design-name">Загружаем варианты…</h1><p id="edition"></p></div>
+    <div class="tools"><button id="list-open">Все дизайны <span id="total"></span></button><button id="liked-open" class="owner">Нравятся <span id="liked-count">0</span></button><button id="share-open" class="owner primary" disabled><span class="full-label">Подборка для Дарьи</span><span class="short-label">Для Дарьи</span></button><a id="original" target="_blank" rel="noopener" class="external">Открыть отдельно <span aria-hidden="true">↗</span></a></div>
+  </div>
+  <div class="actions">
+    <div class="nav"><button id="previous" aria-label="Предыдущий дизайн">← <span>Назад</span></button><span id="position" aria-live="polite"></span><button id="next" aria-label="Следующий дизайн"><span>Дальше</span> →</button></div>
+    <div class="votes owner"><button id="no" aria-pressed="false">Не нравится</button><button id="yes" aria-pressed="false">Нравится</button><button id="undo" disabled title="Отменить последнюю оценку">Отменить</button></div>
+    <p id="progress" class="progress owner"></p>
+  </div>
+  <div class="saving owner"><span id="save-note">Выбор сохраняется в этом браузере. После оценки откроется следующий дизайн.</span><a href="/daria-review-20261026/">Старый список и админка</a></div>
+</header>
+<main id="stage"><div id="loading" role="status">Загружаем дизайн…</div><iframe id="preview" title="Предпросмотр дизайна" referrerpolicy="same-origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe><div id="empty" hidden><h2>В этой подборке пока нет вариантов</h2><p id="empty-text">Сначала отметьте понравившиеся дизайны.</p><button id="show-all" class="owner">Вернуться ко всем дизайнам</button></div></main>
+<div id="toast" role="status" aria-live="polite"></div>
+<dialog id="list-dialog" aria-labelledby="list-heading"><div class="dialog-head"><h2 id="list-heading">Все дизайны</h2><button data-close="list-dialog" aria-label="Закрыть список">Закрыть</button></div><div class="list-controls"><label class="search">Поиск по названию<input id="search" type="search" placeholder="Например, Светлый или Signature"></label><label class="owner filter">Показать<select id="filter"><option value="all">Все варианты</option><option value="unseen">Без оценки</option><option value="yes">Нравятся</option><option value="no">Не нравятся</option></select></label></div><p id="list-count"></p><div id="design-list"></div><p class="dialog-foot owner">Список включает ранние и промежуточные версии. «Не нравится» только ставит отметку — дизайн остаётся доступен.</p></dialog>
+<dialog id="share-dialog" aria-labelledby="share-heading"><div class="dialog-head"><h2 id="share-heading">Подборка для Дарьи</h2><button data-close="share-dialog">Закрыть</button></div><p>По этой ссылке будут только понравившиеся варианты — без ваших оценок остальных дизайнов.</p><p id="share-count"></p><label class="share-label">Ссылка на подборку<input id="share-url" readonly></label><div class="share-actions"><button id="copy" class="primary">Скопировать ссылку</button><a id="share-preview" class="button" target="_blank" rel="noopener">Посмотреть подборку</a></div><p class="muted">Ссылка фиксирует текущий выбор. Если отметите другие варианты, создайте новую ссылку. Скопированную ссылку можно также прислать сюда в чат.</p></dialog>
+<noscript>Для просмотра и сохранения выбора включите JavaScript. <a href="/daria-review-20261026/">Открыть полный список</a>.</noscript>
+</body></html>
