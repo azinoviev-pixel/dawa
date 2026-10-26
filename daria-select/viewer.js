@@ -100,8 +100,10 @@
       doc.head.append(style);
       // Legacy themes also switch on arrow keys. Keep the visible design and its rating together.
       doc.addEventListener('keydown', event => {
-        if (!doc.querySelector('.design-switcher,.studio-switcher') || !['ArrowLeft','ArrowRight'].includes(event.key) || event.ctrlKey || event.metaKey || event.altKey || event.shiftKey || event.target.closest('input,textarea,select,[contenteditable=true]')) return;
-        event.preventDefault(); event.stopImmediatePropagation(); move(event.key === 'ArrowRight' ? 1 : -1);
+        if (!doc.querySelector('.design-switcher,.studio-switcher') || !['ArrowLeft','ArrowRight'].includes(event.key)) return;
+        event.stopImmediatePropagation();
+        if (event.ctrlKey || event.metaKey || event.altKey || event.shiftKey || event.target.closest('input,textarea,select,[contenteditable=true]')) return;
+        event.preventDefault(); move(event.key === 'ArrowRight' ? 1 : -1);
       }, true);
     } catch {}
   });
