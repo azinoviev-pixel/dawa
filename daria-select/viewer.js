@@ -1,15 +1,18 @@
 'use strict';
+import {SelectionCloud,selectionLoginMessage,CLOUD_KEY,OUTBOX_PREFIX} from './cloud-sync.mjs';
 (async () => {
   const $ = (id) => document.getElementById(id);
   const shared = document.body.dataset.mode === 'share';
   const KEY = 'daria-design-review-v1';
+  const CLOUD_ORIGIN = 'https://daria-web-preview.up.railway.app';
+  let cloud = null, cloudState = null, loginNonce = '', loginLoadTimer;
   let catalog = [], pool = [], votes = {}, current = '', filter = 'all', undo = [], timer, loadTimer, saved = true;
   const toast = (text) => { $('toast').textContent = text; clearTimeout(timer); timer = setTimeout(() => $('toast').textContent = '', 3200); };
   const store = () => {
     if (shared) return;
     try { localStorage.setItem(KEY, JSON.stringify({votes, current})); saved = true; }
     catch { saved = false; }
-    $('save-note').textContent = saved ? 'Выбор сохраняется в этом браузере. После оценки откроется следующий дизайн.' : 'Браузер не сохраняет выбор. Скопируйте ссылку на подборку перед закрытием.';
+    $('save-note').textContent = saved ? 'После оценки откроется следующий дизайн. К выбору можно вернуться позже.' : 'Браузер не сохраняет выбор. Скопируйте ссылку на подборку перед закрытием.';
   };
   const eligible = () => pool.filter(x => filter === 'all' || (filter === 'unseen' ? !votes[x.id] : votes[x.id] === filter));
   const label = (x) => x.name + (x.name === x.edition ? '' : ' · ' + x.edition);
@@ -67,6 +70,7 @@
     undo.push({id:current, previous, filter});
     votes[current] = value;
     store();
+    cloud?.mark(current,value);
     const next = queue[index + 1];
     show(next ? next.id : current);
     toast((value === 'yes' ? 'Добавлено в понравившиеся' : 'Отмечено: не нравится') + (!next ? '. Вы дошли до конца списка.' : ''));
@@ -111,7 +115,7 @@
   $('next').addEventListener('click', () => move(1));
   $('yes').addEventListener('click', () => vote('yes'));
   $('no').addEventListener('click', () => vote('no'));
-  $('undo').addEventListener('click', () => { const last = undo.pop(); if (!last) return; if (last.previous) votes[last.id] = last.previous; else delete votes[last.id]; filter = last.filter; show(last.id); toast('Последняя оценка отменена'); });
+  $('undo').addEventListener('click', () => { const last = undo.pop(); if (!last) return; if (last.previous) votes[last.id] = last.previous; else delete votes[last.id]; cloud?.mark(last.id,last.previous); filter = last.filter; show(last.id); toast('Последняя оценка отменена'); });
   $('list-open').addEventListener('click', () => openList('all'));
   $('liked-open').addEventListener('click', () => openList('yes'));
   $('show-all').addEventListener('click', () => { filter = 'all'; show(current); });
@@ -133,9 +137,81 @@
   });
   window.addEventListener('hashchange', () => { if (!shared) show(location.hash.slice(1), false); });
   window.addEventListener('storage', (event) => {
+    if (!shared && cloud && (event.key===CLOUD_KEY || event.key?.startsWith(OUTBOX_PREFIX))) {
+      if (document.visibilityState==='visible') cloud.sync();
+      return;
+    }
     if (shared || event.key !== KEY) return;
+    if (cloud?.connection()) return;
     try { const data = JSON.parse(event.newValue); if (!data || typeof data.votes !== 'object') return; votes = Object.fromEntries(catalog.filter(x => ['yes','no'].includes(data.votes[x.id])).map(x => [x.id,data.votes[x.id]])); updateCounts(); $('yes').setAttribute('aria-pressed',votes[current] === 'yes'); $('no').setAttribute('aria-pressed',votes[current] === 'no'); if ($('list-dialog').open) renderList(); } catch {}
   });
+  const ratingText = selected => selected === 'yes' ? 'Нравится' : selected === 'no' ? 'Не нравится' : 'Без оценки';
+  const renderConflicts = () => {
+    $('conflict-list').replaceChildren();
+    for (const conflict of cloudState?.conflicts || []) {
+      const design=catalog.find(x=>x.id===conflict.id); if (!design) continue;
+      const row=document.createElement('section'); row.className='conflict-row';
+      const heading=document.createElement('h3'); heading.textContent=label(design);
+      const detail=document.createElement('p'); detail.textContent=`Здесь: ${ratingText(conflict.local)}. На сайте: ${ratingText(conflict.remote)}.`;
+      const actions=document.createElement('div'); actions.className='share-actions';
+      for (const [title,useLocal] of [['Оставить мой выбор',true],['Взять с сайта',false]]) {
+        const button=document.createElement('button'); button.textContent=title;
+        button.addEventListener('click',async()=>{button.disabled=true; await cloud.resolve(conflict.id,useLocal); renderConflicts();});
+        actions.append(button);
+      }
+      row.append(heading,detail,actions); $('conflict-list').append(row);
+    }
+    if (!cloudState?.conflicts.length) $('conflict-list').textContent='Все расхождения разобраны.';
+  };
+  const onCloudStatus = state => {
+    cloudState=state;
+    $('cloud-status').textContent=state.message;
+    $('cloud-bar').dataset.status=state.phase;
+    $('cloud-connect').textContent=state.phase==='auth' ? 'Войти снова' : ['offline','storage'].includes(state.phase) || (state.pendingCount && state.phase!=='conflict') ? 'Повторить' : cloud?.connected() ? 'Обновить' : 'Сохранить на сайте';
+    $('cloud-connect').disabled=state.phase==='connecting';
+    $('cloud-conflicts').hidden=!state.conflicts.length;
+    if (state.conflicts.length) $('cloud-conflicts').textContent=`Сравнить оценки (${state.conflicts.length})`;
+    if ($('conflict-dialog').open) renderConflicts();
+  };
+  $('cloud-conflicts').addEventListener('click',()=>{renderConflicts();$('conflict-dialog').showModal();});
+  $('cloud-connect').addEventListener('click',()=>{
+    if (shared || !cloud) return;
+    if (cloud.connected() && cloudState?.phase!=='auth') { cloud.sync(); return; }
+    loginNonce=crypto.randomUUID()+crypto.randomUUID();
+    const count=Object.values(votes).filter(x=>x==='yes').length;
+    $('cloud-login-summary').textContent=`В этом браузере отмечено «Нравится»: ${count}. После входа этот выбор станет доступен с других устройств.`;
+    $('cloud-login-loading').textContent='Загружаем форму входа…';
+    $('cloud-login-loading').hidden=false;
+    $('cloud-login-frame').src=CLOUD_ORIGIN+'/design-selection/login/?state='+encodeURIComponent(loginNonce);
+    $('cloud-login-dialog').showModal();
+    clearTimeout(loginLoadTimer);
+    loginLoadTimer=setTimeout(()=>{
+      $('cloud-login-loading').textContent='Форма загружается дольше обычного. Можно закрыть окно и попробовать ещё раз. Ваши отметки сохранены.';
+    },15000);
+  });
+  $('cloud-login-frame').addEventListener('load',()=>{
+    if (!loginNonce) return;
+    clearTimeout(loginLoadTimer);
+    $('cloud-login-loading').hidden=true;
+  });
+  const clearLogin=()=>{
+    loginNonce=''; clearTimeout(loginLoadTimer);
+    $('cloud-login-frame').src='about:blank';
+  };
+  window.addEventListener('message',async event=>{
+    if (shared || !cloud || !$('cloud-login-dialog').open) return;
+    const access=selectionLoginMessage(event,{origin:CLOUD_ORIGIN,source:$('cloud-login-frame').contentWindow,nonce:loginNonce});
+    if (!access) return;
+    // Invalidate this one-time handshake before the asynchronous save starts.
+    clearLogin(); $('cloud-login-dialog').close();
+    try {
+      await cloud.connect(access.token,access.expiresAt);
+    } catch {
+      cloud.emit('auth','Подключение не завершено. Ваши отметки остаются в этом браузере.');
+    }
+  });
+  $('cloud-login-dialog').addEventListener('close',clearLogin);
+  window.addEventListener('pagehide',clearLogin);
   try {
     const response = await fetch('/daria-select/catalog.json'); if (!response.ok) throw Error('catalog'); catalog = await response.json();
     pool = catalog;
@@ -148,6 +224,16 @@
     }
     $('total').textContent = pool.length;
     show(!shared && location.hash ? location.hash.slice(1) : current);
+    if (!shared) {
+      let storage;
+      try { storage=localStorage; } catch { storage={length:0,key:()=>null,getItem:()=>null,setItem:()=>{throw Error('storage');},removeItem:()=>{}}; }
+      cloud=new SelectionCloud({ids:catalog.map(x=>x.id),storage,backend:CLOUD_ORIGIN,locks:navigator.locks,
+        getLocalVotes:()=>votes,onStatus:onCloudStatus,onVotes:next=>{votes=next;show(current);if($('list-dialog').open)renderList();}});
+      cloud.sync();
+      const refresh=()=>{if(document.visibilityState==='visible' && cloud.connection())cloud.sync();};
+      window.addEventListener('focus',refresh); window.addEventListener('online',refresh);
+      document.addEventListener('visibilitychange',refresh);
+    }
   } catch {
     $('loading').textContent = 'Не удалось загрузить список. Обновите страницу или откройте прежнюю галерею.';
     $('design-name').textContent = 'Список временно недоступен';

@@ -1,0 +1,1208 @@
+[
+  {
+    "id": "1ad24f97c3",
+    "url": "/daria-r26-v4/?theme=1#variant-1",
+    "name": "Светлый",
+    "edition": "v4 · присланные Дарьей изображения",
+    "group": "Ранние версии · v4–v11",
+    "description": "Самая ранняя сохранённая сборка с присланными изображениями. В переписке Дарья выделила «01 Светлый» по цветам.",
+    "intermediate": false
+  },
+  {
+    "id": "09ec979b4c",
+    "url": "/daria-r26-v4/?theme=2#variant-2",
+    "name": "Морской",
+    "edition": "v4 · присланные Дарьей изображения",
+    "group": "Ранние версии · v4–v11",
+    "description": "Самая ранняя сохранённая сборка с присланными изображениями. В переписке Дарья выделила «01 Светлый» по цветам.",
+    "intermediate": false
+  },
+  {
+    "id": "a224e604fd",
+    "url": "/daria-r26-v4/?theme=3#variant-3",
+    "name": "Private",
+    "edition": "v4 · присланные Дарьей изображения",
+    "group": "Ранние версии · v4–v11",
+    "description": "Самая ранняя сохранённая сборка с присланными изображениями. В переписке Дарья выделила «01 Светлый» по цветам.",
+    "intermediate": false
+  },
+  {
+    "id": "de23ae8f85",
+    "url": "/daria-r26-v5/?theme=1#variant-1",
+    "name": "Светлый",
+    "edition": "v5 · листание объектов",
+    "group": "Ранние версии · v4–v11",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "ee6a002d6e",
+    "url": "/daria-r26-v5/?theme=2#variant-2",
+    "name": "Морской",
+    "edition": "v5 · листание объектов",
+    "group": "Ранние версии · v4–v11",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "e28b3c2822",
+    "url": "/daria-r26-v5/?theme=3#variant-3",
+    "name": "Private",
+    "edition": "v5 · листание объектов",
+    "group": "Ранние версии · v4–v11",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "e45a736f84",
+    "url": "/daria-r26-v6/?theme=1#variant-1",
+    "name": "Светлый",
+    "edition": "v6 · первый конструктор",
+    "group": "Ранние версии · v4–v11",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "14b658ebde",
+    "url": "/daria-r26-v6/?theme=2#variant-2",
+    "name": "Морской",
+    "edition": "v6 · первый конструктор",
+    "group": "Ранние версии · v4–v11",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "7aee6b6ac0",
+    "url": "/daria-r26-v6/?theme=3#variant-3",
+    "name": "Private",
+    "edition": "v6 · первый конструктор",
+    "group": "Ранние версии · v4–v11",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "d6c58217f7",
+    "url": "/daria-r26-v7/?theme=1#variant-1",
+    "name": "Светлый",
+    "edition": "v7 · каталог и статьи",
+    "group": "Ранние версии · v4–v11",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "1285f1ed99",
+    "url": "/daria-r26-v7/?theme=2#variant-2",
+    "name": "Морской",
+    "edition": "v7 · каталог и статьи",
+    "group": "Ранние версии · v4–v11",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "c1982d1842",
+    "url": "/daria-r26-v7/?theme=3#variant-3",
+    "name": "Private",
+    "edition": "v7 · каталог и статьи",
+    "group": "Ранние версии · v4–v11",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "6d265d63f7",
+    "url": "/daria-r26-v8/?theme=1#variant-1",
+    "name": "Светлый",
+    "edition": "v8 · проверенная редакция CMS",
+    "group": "Ранние версии · v4–v11",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "aaae2ccd18",
+    "url": "/daria-r26-v8/?theme=2#variant-2",
+    "name": "Морской",
+    "edition": "v8 · проверенная редакция CMS",
+    "group": "Ранние версии · v4–v11",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "e11bcfff79",
+    "url": "/daria-r26-v8/?theme=3#variant-3",
+    "name": "Private",
+    "edition": "v8 · проверенная редакция CMS",
+    "group": "Ранние версии · v4–v11",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "1132804995",
+    "url": "/daria-r26-v9/?theme=1#variant-1",
+    "name": "Светлый",
+    "edition": "v9 · пять направлений",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "2ce6693fce",
+    "url": "/daria-r26-v9/?theme=2#variant-2",
+    "name": "Морской",
+    "edition": "v9 · пять направлений",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "7bba9b4aca",
+    "url": "/daria-r26-v9/?theme=3#variant-3",
+    "name": "Private",
+    "edition": "v9 · пять направлений",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "52955b4117",
+    "url": "/daria-r26-v9/?theme=4#variant-4",
+    "name": "Ателье",
+    "edition": "v9 · пять направлений",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "d2d723c23a",
+    "url": "/daria-r26-v9/?theme=5#variant-5",
+    "name": "Личный запрос",
+    "edition": "v9 · пять направлений",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "1e3d59cc1e",
+    "url": "/daria-r26-v10/?theme=1#variant-1",
+    "name": "Светлый",
+    "edition": "v10 · читаемость",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "cf11d0ba2c",
+    "url": "/daria-r26-v10/?theme=2#variant-2",
+    "name": "Морской",
+    "edition": "v10 · читаемость",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "e9e0bf1032",
+    "url": "/daria-r26-v10/?theme=3#variant-3",
+    "name": "Private",
+    "edition": "v10 · читаемость",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "d2491b2ad9",
+    "url": "/daria-r26-v10/?theme=4#variant-4",
+    "name": "Ателье",
+    "edition": "v10 · читаемость",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "eefd38a0bd",
+    "url": "/daria-r26-v10/?theme=5#variant-5",
+    "name": "Личный запрос",
+    "edition": "v10 · читаемость",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "7d2937be4e",
+    "url": "/daria-r26-v10-1/?theme=1#variant-1",
+    "name": "Светлый",
+    "edition": "v10.1 · композиция",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "c3a73e5ed3",
+    "url": "/daria-r26-v10-1/?theme=2#variant-2",
+    "name": "Морской",
+    "edition": "v10.1 · композиция",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "99607bdf50",
+    "url": "/daria-r26-v10-1/?theme=3#variant-3",
+    "name": "Private",
+    "edition": "v10.1 · композиция",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "e5e2499d1b",
+    "url": "/daria-r26-v10-1/?theme=4#variant-4",
+    "name": "Ателье",
+    "edition": "v10.1 · композиция",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "b03efe62bf",
+    "url": "/daria-r26-v10-1/?theme=5#variant-5",
+    "name": "Личный запрос",
+    "edition": "v10.1 · композиция",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "96efffef95",
+    "url": "/daria-r26-v11/?theme=1#variant-1",
+    "name": "Светлый",
+    "edition": "v11 / Series I · редакционная версия",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "8c6192c67c",
+    "url": "/daria-r26-v11/?theme=2#variant-2",
+    "name": "Морской",
+    "edition": "v11 / Series I · редакционная версия",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "a18c0a2a09",
+    "url": "/daria-r26-v11/?theme=3#variant-3",
+    "name": "Private",
+    "edition": "v11 / Series I · редакционная версия",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "417d73a268",
+    "url": "/daria-r26-v11/?theme=4#variant-4",
+    "name": "Ателье",
+    "edition": "v11 / Series I · редакционная версия",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "b388f3d01b",
+    "url": "/daria-r26-v11/?theme=5#variant-5",
+    "name": "Личный запрос",
+    "edition": "v11 / Series I · редакционная версия",
+    "group": "Ранние версии · v4–v11",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": false
+  },
+  {
+    "id": "520968eba7",
+    "url": "/daria-r26-series2-r1/pavilion/",
+    "name": "Pavilion",
+    "edition": "Series II · R1",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "27d82a870f",
+    "url": "/daria-r26-series2-r1/folio/",
+    "name": "Folio",
+    "edition": "Series II · R1",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "b390692f36",
+    "url": "/daria-r26-series2-r1/atlas/",
+    "name": "Atlas",
+    "edition": "Series II · R1",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "4b96e91013",
+    "url": "/daria-r26-series2-r1/salon/",
+    "name": "Salon",
+    "edition": "Series II · R1",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "28008ccdb2",
+    "url": "/daria-r26-series2-r1/atelier/",
+    "name": "Atelier",
+    "edition": "Series II · R1",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "bca832312b",
+    "url": "/daria-r26-series2-r2/pavilion/",
+    "name": "Pavilion",
+    "edition": "Series II · R2",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "60d80341b6",
+    "url": "/daria-r26-series2-r2/folio/",
+    "name": "Folio",
+    "edition": "Series II · R2",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "15c8230d6d",
+    "url": "/daria-r26-series2-r2/atlas/",
+    "name": "Atlas",
+    "edition": "Series II · R2",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "a8e41d0c05",
+    "url": "/daria-r26-series2-r2/salon/",
+    "name": "Salon",
+    "edition": "Series II · R2",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "8290e922e6",
+    "url": "/daria-r26-series2-r2/atelier/",
+    "name": "Atelier",
+    "edition": "Series II · R2",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "4634ef3d69",
+    "url": "/daria-r26-series2-r3/pavilion/",
+    "name": "Pavilion",
+    "edition": "Series II · R3",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "0e2da1e68a",
+    "url": "/daria-r26-series2-r3/folio/",
+    "name": "Folio",
+    "edition": "Series II · R3",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "9fdbfcc5d9",
+    "url": "/daria-r26-series2-r3/atlas/",
+    "name": "Atlas",
+    "edition": "Series II · R3",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "b4b69a49d7",
+    "url": "/daria-r26-series2-r3/salon/",
+    "name": "Salon",
+    "edition": "Series II · R3",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "5e6e6ba8cb",
+    "url": "/daria-r26-series2-r3/atelier/",
+    "name": "Atelier",
+    "edition": "Series II · R3",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "49f126cd60",
+    "url": "/daria-r26-series3-r1/luz/",
+    "name": "Luz",
+    "edition": "Series III · пять черновиков",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "1de193d01f",
+    "url": "/daria-r26-series3-r1/forma/",
+    "name": "Forma",
+    "edition": "Series III · пять черновиков",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "3a83c3c2a7",
+    "url": "/daria-r26-series3-r1/patio/",
+    "name": "Patio",
+    "edition": "Series III · пять черновиков",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "daecb3f770",
+    "url": "/daria-r26-series3-r1/linea/",
+    "name": "Linea",
+    "edition": "Series III · пять черновиков",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "5fc481a954",
+    "url": "/daria-r26-series3-r1/cala/",
+    "name": "Cala",
+    "edition": "Series III · пять черновиков",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "d8dac59123",
+    "url": "/daria-r26-forma-r2/forma/",
+    "name": "Forma",
+    "edition": "Forma R2 · новый кандидат",
+    "group": "Series II и III · 23 октября",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "57c6c5823b",
+    "url": "/daria-r26-client-first/?theme=1",
+    "name": "Светлый",
+    "edition": "Серия I · исправленное содержание",
+    "group": "Комплект по брифу Дарьи · 23 октября",
+    "description": "Редакция с уточнённой услугой, предложениями, статьями и формой. Фото Дарьи сохранены.",
+    "intermediate": false
+  },
+  {
+    "id": "f3ae67da9c",
+    "url": "/daria-r26-client-first/?theme=2",
+    "name": "Морской",
+    "edition": "Серия I · исправленное содержание",
+    "group": "Комплект по брифу Дарьи · 23 октября",
+    "description": "Редакция с уточнённой услугой, предложениями, статьями и формой. Фото Дарьи сохранены.",
+    "intermediate": false
+  },
+  {
+    "id": "36a6ca0816",
+    "url": "/daria-r26-client-first/?theme=3",
+    "name": "Private",
+    "edition": "Серия I · исправленное содержание",
+    "group": "Комплект по брифу Дарьи · 23 октября",
+    "description": "Редакция с уточнённой услугой, предложениями, статьями и формой. Фото Дарьи сохранены.",
+    "intermediate": false
+  },
+  {
+    "id": "5a201574fc",
+    "url": "/daria-r26-client-first/?theme=4",
+    "name": "Ателье",
+    "edition": "Серия I · исправленное содержание",
+    "group": "Комплект по брифу Дарьи · 23 октября",
+    "description": "Редакция с уточнённой услугой, предложениями, статьями и формой. Фото Дарьи сохранены.",
+    "intermediate": false
+  },
+  {
+    "id": "fd1445eaab",
+    "url": "/daria-r26-client-first/?theme=5",
+    "name": "Личный запрос",
+    "edition": "Серия I · исправленное содержание",
+    "group": "Комплект по брифу Дарьи · 23 октября",
+    "description": "Редакция с уточнённой услугой, предложениями, статьями и формой. Фото Дарьи сохранены.",
+    "intermediate": false
+  },
+  {
+    "id": "043907e2f2",
+    "url": "/daria-r26-client-second/pavilion/",
+    "name": "Pavilion",
+    "edition": "Серия II · исправленное содержание",
+    "group": "Комплект по брифу Дарьи · 23 октября",
+    "description": "Редакция с уточнённой услугой, предложениями, статьями и формой. Фото Дарьи сохранены.",
+    "intermediate": false
+  },
+  {
+    "id": "39db6be81d",
+    "url": "/daria-r26-client-second/folio/",
+    "name": "Folio",
+    "edition": "Серия II · исправленное содержание",
+    "group": "Комплект по брифу Дарьи · 23 октября",
+    "description": "Редакция с уточнённой услугой, предложениями, статьями и формой. Фото Дарьи сохранены.",
+    "intermediate": false
+  },
+  {
+    "id": "0f502cc236",
+    "url": "/daria-r26-client-second/atlas/",
+    "name": "Atlas",
+    "edition": "Серия II · исправленное содержание",
+    "group": "Комплект по брифу Дарьи · 23 октября",
+    "description": "Редакция с уточнённой услугой, предложениями, статьями и формой. Фото Дарьи сохранены.",
+    "intermediate": false
+  },
+  {
+    "id": "427e85bb66",
+    "url": "/daria-r26-client-second/salon/",
+    "name": "Salon",
+    "edition": "Серия II · исправленное содержание",
+    "group": "Комплект по брифу Дарьи · 23 октября",
+    "description": "Редакция с уточнённой услугой, предложениями, статьями и формой. Фото Дарьи сохранены.",
+    "intermediate": false
+  },
+  {
+    "id": "966a6ed48d",
+    "url": "/daria-r26-client-second/atelier/",
+    "name": "Atelier",
+    "edition": "Серия II · исправленное содержание",
+    "group": "Комплект по брифу Дарьи · 23 октября",
+    "description": "Редакция с уточнённой услугой, предложениями, статьями и формой. Фото Дарьи сохранены.",
+    "intermediate": false
+  },
+  {
+    "id": "0d6ca0337c",
+    "url": "/daria-r26-client-third/luz/",
+    "name": "Luz",
+    "edition": "Серия III · исправленное содержание",
+    "group": "Комплект по брифу Дарьи · 23 октября",
+    "description": "Редакция с уточнённой услугой, предложениями, статьями и формой. Фото Дарьи сохранены.",
+    "intermediate": false
+  },
+  {
+    "id": "2e54221775",
+    "url": "/daria-r26-client-third/forma/",
+    "name": "Forma",
+    "edition": "Серия III · исправленное содержание",
+    "group": "Комплект по брифу Дарьи · 23 октября",
+    "description": "Редакция с уточнённой услугой, предложениями, статьями и формой. Фото Дарьи сохранены.",
+    "intermediate": false
+  },
+  {
+    "id": "0208a1c79e",
+    "url": "/daria-r26-client-third/patio/",
+    "name": "Patio",
+    "edition": "Серия III · исправленное содержание",
+    "group": "Комплект по брифу Дарьи · 23 октября",
+    "description": "Редакция с уточнённой услугой, предложениями, статьями и формой. Фото Дарьи сохранены.",
+    "intermediate": false
+  },
+  {
+    "id": "1ed8d0ccf1",
+    "url": "/daria-r26-client-third/linea/",
+    "name": "Linea",
+    "edition": "Серия III · исправленное содержание",
+    "group": "Комплект по брифу Дарьи · 23 октября",
+    "description": "Редакция с уточнённой услугой, предложениями, статьями и формой. Фото Дарьи сохранены.",
+    "intermediate": false
+  },
+  {
+    "id": "d14b5d44ea",
+    "url": "/daria-r26-client-third/cala/",
+    "name": "Cala",
+    "edition": "Серия III · исправленное содержание",
+    "group": "Комплект по брифу Дарьи · 23 октября",
+    "description": "Редакция с уточнённой услугой, предложениями, статьями и формой. Фото Дарьи сохранены.",
+    "intermediate": false
+  },
+  {
+    "id": "ae3a9e3b56",
+    "url": "/daria-r26-client-forma/forma/",
+    "name": "Forma",
+    "edition": "Forma R2 · исправленное содержание",
+    "group": "Комплект по брифу Дарьи · 23 октября",
+    "description": "Редакция с уточнённой услугой, предложениями, статьями и формой. Фото Дарьи сохранены.",
+    "intermediate": false
+  },
+  {
+    "id": "6c7f534bf2",
+    "url": "/daria-r26-type-heritage/?theme=1",
+    "name": "Светлый",
+    "edition": "Ранний характер",
+    "group": "Типографика · три профиля",
+    "description": "Пять прежних оформлений с этим профилем шрифтов. Это типографические редакции, не пять новых композиций.",
+    "intermediate": false
+  },
+  {
+    "id": "ef4177986f",
+    "url": "/daria-r26-type-heritage/?theme=2",
+    "name": "Морской",
+    "edition": "Ранний характер",
+    "group": "Типографика · три профиля",
+    "description": "Пять прежних оформлений с этим профилем шрифтов. Это типографические редакции, не пять новых композиций.",
+    "intermediate": false
+  },
+  {
+    "id": "f9cb3ea365",
+    "url": "/daria-r26-type-heritage/?theme=3",
+    "name": "Private",
+    "edition": "Ранний характер",
+    "group": "Типографика · три профиля",
+    "description": "Пять прежних оформлений с этим профилем шрифтов. Это типографические редакции, не пять новых композиций.",
+    "intermediate": false
+  },
+  {
+    "id": "5bdbbbcdb2",
+    "url": "/daria-r26-type-heritage/?theme=4",
+    "name": "Ателье",
+    "edition": "Ранний характер",
+    "group": "Типографика · три профиля",
+    "description": "Пять прежних оформлений с этим профилем шрифтов. Это типографические редакции, не пять новых композиций.",
+    "intermediate": false
+  },
+  {
+    "id": "c66ca2a08f",
+    "url": "/daria-r26-type-heritage/?theme=5",
+    "name": "Личный запрос",
+    "edition": "Ранний характер",
+    "group": "Типографика · три профиля",
+    "description": "Пять прежних оформлений с этим профилем шрифтов. Это типографические редакции, не пять новых композиций.",
+    "intermediate": false
+  },
+  {
+    "id": "69ff030def",
+    "url": "/daria-r26-type-compact/?theme=1",
+    "name": "Светлый",
+    "edition": "Компактный",
+    "group": "Типографика · три профиля",
+    "description": "Пять прежних оформлений с этим профилем шрифтов. Это типографические редакции, не пять новых композиций.",
+    "intermediate": false
+  },
+  {
+    "id": "9d428c0d86",
+    "url": "/daria-r26-type-compact/?theme=2",
+    "name": "Морской",
+    "edition": "Компактный",
+    "group": "Типографика · три профиля",
+    "description": "Пять прежних оформлений с этим профилем шрифтов. Это типографические редакции, не пять новых композиций.",
+    "intermediate": false
+  },
+  {
+    "id": "573ae9d49a",
+    "url": "/daria-r26-type-compact/?theme=3",
+    "name": "Private",
+    "edition": "Компактный",
+    "group": "Типографика · три профиля",
+    "description": "Пять прежних оформлений с этим профилем шрифтов. Это типографические редакции, не пять новых композиций.",
+    "intermediate": false
+  },
+  {
+    "id": "4f22dc5707",
+    "url": "/daria-r26-type-compact/?theme=4",
+    "name": "Ателье",
+    "edition": "Компактный",
+    "group": "Типографика · три профиля",
+    "description": "Пять прежних оформлений с этим профилем шрифтов. Это типографические редакции, не пять новых композиций.",
+    "intermediate": false
+  },
+  {
+    "id": "97892076b8",
+    "url": "/daria-r26-type-compact/?theme=5",
+    "name": "Личный запрос",
+    "edition": "Компактный",
+    "group": "Типографика · три профиля",
+    "description": "Пять прежних оформлений с этим профилем шрифтов. Это типографические редакции, не пять новых композиций.",
+    "intermediate": false
+  },
+  {
+    "id": "8079aa4b87",
+    "url": "/daria-r26-type-contrast/?theme=1",
+    "name": "Светлый",
+    "edition": "Контрастный",
+    "group": "Типографика · три профиля",
+    "description": "Пять прежних оформлений с этим профилем шрифтов. Это типографические редакции, не пять новых композиций.",
+    "intermediate": false
+  },
+  {
+    "id": "dfe748360c",
+    "url": "/daria-r26-type-contrast/?theme=2",
+    "name": "Морской",
+    "edition": "Контрастный",
+    "group": "Типографика · три профиля",
+    "description": "Пять прежних оформлений с этим профилем шрифтов. Это типографические редакции, не пять новых композиций.",
+    "intermediate": false
+  },
+  {
+    "id": "24a3bd8d98",
+    "url": "/daria-r26-type-contrast/?theme=3",
+    "name": "Private",
+    "edition": "Контрастный",
+    "group": "Типографика · три профиля",
+    "description": "Пять прежних оформлений с этим профилем шрифтов. Это типографические редакции, не пять новых композиций.",
+    "intermediate": false
+  },
+  {
+    "id": "9c63c31879",
+    "url": "/daria-r26-type-contrast/?theme=4",
+    "name": "Ателье",
+    "edition": "Контрастный",
+    "group": "Типографика · три профиля",
+    "description": "Пять прежних оформлений с этим профилем шрифтов. Это типографические редакции, не пять новых композиций.",
+    "intermediate": false
+  },
+  {
+    "id": "291c389436",
+    "url": "/daria-r26-type-contrast/?theme=5",
+    "name": "Личный запрос",
+    "edition": "Контрастный",
+    "group": "Типографика · три профиля",
+    "description": "Пять прежних оформлений с этим профилем шрифтов. Это типографические редакции, не пять новых композиций.",
+    "intermediate": false
+  },
+  {
+    "id": "e30f8038fa",
+    "url": "/daria-r26-domus/",
+    "name": "Светлая композиция",
+    "edition": "Светлая композиция",
+    "group": "Композиции · 24 октября",
+    "description": "Архитектурная галерея; фотография Дарьи — в тёмном блоке «Обо мне».",
+    "intermediate": false
+  },
+  {
+    "id": "3cf3bd4954",
+    "url": "/daria-r26-reset-r1/",
+    "name": "Порог · R1",
+    "edition": "Порог · R1",
+    "group": "Композиции · 24 октября",
+    "description": "Первый рабочий вариант. Портрет — в блоке «Обо мне».",
+    "intermediate": false
+  },
+  {
+    "id": "322012819f",
+    "url": "/daria-r26-reset-r2/",
+    "name": "Порог · R2",
+    "edition": "Порог · R2",
+    "group": "Композиции · 24 октября",
+    "description": "После первой проверки. Портрет — в блоке «Обо мне».",
+    "intermediate": false
+  },
+  {
+    "id": "49d1e413f7",
+    "url": "/daria-r26-reset-r3/",
+    "name": "Порог · R3",
+    "edition": "Порог · R3",
+    "group": "Композиции · 24 октября",
+    "description": "После проверки модели. Портрет — в блоке «Обо мне».",
+    "intermediate": false
+  },
+  {
+    "id": "4c99d7ad85",
+    "url": "/daria-r26-reset-r5/",
+    "name": "Порог · R5",
+    "edition": "Порог · R5",
+    "group": "Композиции · 24 октября",
+    "description": "Итоговая редакция. Портрет — в блоке «Обо мне».",
+    "intermediate": false
+  },
+  {
+    "id": "836378a68c",
+    "url": "/daria-r26-signature-r1/",
+    "name": "Место для вашей жизни · R1",
+    "edition": "Место для вашей жизни · R1",
+    "group": "Композиции · 24 октября",
+    "description": "Сохранённая редакция Signature; фотография Дарьи — в блоке «Обо мне».",
+    "intermediate": false
+  },
+  {
+    "id": "038b053b50",
+    "url": "/daria-r26-signature-r2/",
+    "name": "Место для вашей жизни · R2",
+    "edition": "Место для вашей жизни · R2",
+    "group": "Композиции · 24 октября",
+    "description": "Сохранённая редакция Signature; фотография Дарьи — в блоке «Обо мне».",
+    "intermediate": false
+  },
+  {
+    "id": "3c30a9f55c",
+    "url": "/daria-r26-signature-r3/",
+    "name": "Место для вашей жизни · R3",
+    "edition": "Место для вашей жизни · R3",
+    "group": "Композиции · 24 октября",
+    "description": "Сохранённая редакция Signature; фотография Дарьи — в блоке «Обо мне».",
+    "intermediate": false
+  },
+  {
+    "id": "264714fedc",
+    "url": "/daria-r26-signature-r4/",
+    "name": "Место для вашей жизни · R4",
+    "edition": "Место для вашей жизни · R4",
+    "group": "Композиции · 24 октября",
+    "description": "Сохранённая редакция Signature; фотография Дарьи — в блоке «Обо мне».",
+    "intermediate": false
+  },
+  {
+    "id": "8ec7639c30",
+    "url": "/daria-r26-signature-r5/",
+    "name": "Место для вашей жизни · R5",
+    "edition": "Место для вашей жизни · R5",
+    "group": "Композиции · 24 октября",
+    "description": "Сохранённая редакция Signature; фотография Дарьи — в блоке «Обо мне».",
+    "intermediate": false
+  },
+  {
+    "id": "132cc28873",
+    "url": "/daria-review-20261026/new/series-02/02-private/index.html",
+    "name": "Private",
+    "edition": "Private",
+    "group": "Новые серии · 25–26 октября",
+    "description": "Серия 02. Портрет Дарьи на первом экране.",
+    "intermediate": false
+  },
+  {
+    "id": "43b1a29d3f",
+    "url": "/daria-review-20261026/new/series-03/04-dialogue/index.html",
+    "name": "Dialogue",
+    "edition": "Dialogue",
+    "group": "Новые серии · 25–26 октября",
+    "description": "Серия 03. Личный диалог и портрет Дарьи.",
+    "intermediate": false
+  },
+  {
+    "id": "5ff17b0f3f",
+    "url": "/daria-review-20261026/new/series-03/05-forma/index.html",
+    "name": "Forma",
+    "edition": "Forma",
+    "group": "Новые серии · 25–26 октября",
+    "description": "Серия 03. Пространственная композиция; портрет ниже первого экрана.",
+    "intermediate": false
+  },
+  {
+    "id": "7879dc8ab8",
+    "url": "/daria-review-20261026/new/series-04/01-signature/index.html",
+    "name": "Signature",
+    "edition": "Signature",
+    "group": "Новые серии · 25–26 октября",
+    "description": "Серия 04. Светлая композиция с крупным портретом.",
+    "intermediate": false
+  },
+  {
+    "id": "c0fa36aeda",
+    "url": "/daria-review-20261026/new/series-04/02-presence/index.html",
+    "name": "Presence",
+    "edition": "Presence",
+    "group": "Новые серии · 25–26 октября",
+    "description": "Серия 04. Полноэкранный портрет и выразительная антиква.",
+    "intermediate": false
+  },
+  {
+    "id": "e24cfdbd61",
+    "url": "/daria-review-20261026/new/series-04/03-editorial/index.html",
+    "name": "Editorial",
+    "edition": "Editorial",
+    "group": "Новые серии · 25–26 октября",
+    "description": "Серия 04. Редакционная сетка и портрет слева.",
+    "intermediate": false
+  },
+  {
+    "id": "48c55c53ae",
+    "url": "/daria-review-20261026/new/series-04/04-private/index.html",
+    "name": "Private Office",
+    "edition": "Private Office",
+    "group": "Новые серии · 25–26 октября",
+    "description": "Серия 04. Профиль персонального консультанта.",
+    "intermediate": false
+  },
+  {
+    "id": "04e3fa514a",
+    "url": "/daria-review-20261026/new/series-04/05-advisory/index.html",
+    "name": "Advisory",
+    "edition": "Advisory",
+    "group": "Новые серии · 25–26 октября",
+    "description": "Серия 04. Портрет в центре и короткий запрос справа.",
+    "intermediate": false
+  },
+  {
+    "id": "5a5d4e1730",
+    "url": "/daria-r26-v11-prestructure/?theme=1#variant-1",
+    "name": "Светлый",
+    "edition": "v11 · до изменения структуры",
+    "group": "Промежуточные состояния",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": true
+  },
+  {
+    "id": "19ab78a858",
+    "url": "/daria-r26-v11-prestructure/?theme=2#variant-2",
+    "name": "Морской",
+    "edition": "v11 · до изменения структуры",
+    "group": "Промежуточные состояния",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": true
+  },
+  {
+    "id": "88ae1ea169",
+    "url": "/daria-r26-v11-prestructure/?theme=3#variant-3",
+    "name": "Private",
+    "edition": "v11 · до изменения структуры",
+    "group": "Промежуточные состояния",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": true
+  },
+  {
+    "id": "ff2a4e250b",
+    "url": "/daria-r26-v11-prestructure/?theme=4#variant-4",
+    "name": "Ателье",
+    "edition": "v11 · до изменения структуры",
+    "group": "Промежуточные состояния",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": true
+  },
+  {
+    "id": "3536167012",
+    "url": "/daria-r26-v11-prestructure/?theme=5#variant-5",
+    "name": "Личный запрос",
+    "edition": "v11 · до изменения структуры",
+    "group": "Промежуточные состояния",
+    "description": "В «Светлом», «Морском» и Private портрет на первом экране; в «Ателье» и «Личном запросе» — ниже.",
+    "intermediate": true
+  },
+  {
+    "id": "d850d9feb7",
+    "url": "/daria-r26-series2-alpha/pavilion/",
+    "name": "Pavilion",
+    "edition": "Series II · первая сборка",
+    "group": "Промежуточные состояния",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": true
+  },
+  {
+    "id": "863685f7e8",
+    "url": "/daria-r26-series2-alpha/folio/",
+    "name": "Folio",
+    "edition": "Series II · первая сборка",
+    "group": "Промежуточные состояния",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": true
+  },
+  {
+    "id": "03db5c088c",
+    "url": "/daria-r26-series2-alpha/atlas/",
+    "name": "Atlas",
+    "edition": "Series II · первая сборка",
+    "group": "Промежуточные состояния",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": true
+  },
+  {
+    "id": "e109d630d9",
+    "url": "/daria-r26-series2-alpha/salon/",
+    "name": "Salon",
+    "edition": "Series II · первая сборка",
+    "group": "Промежуточные состояния",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": true
+  },
+  {
+    "id": "4b8ff0c8f4",
+    "url": "/daria-r26-series2-alpha/atelier/",
+    "name": "Atelier",
+    "edition": "Series II · первая сборка",
+    "group": "Промежуточные состояния",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": true
+  },
+  {
+    "id": "a713ce1735",
+    "url": "/daria-r26-series3-pre-review/luz/",
+    "name": "Luz",
+    "edition": "Series III · до ревью",
+    "group": "Промежуточные состояния",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": true
+  },
+  {
+    "id": "04bc931350",
+    "url": "/daria-r26-series3-pre-review/forma/",
+    "name": "Forma",
+    "edition": "Series III · до ревью",
+    "group": "Промежуточные состояния",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": true
+  },
+  {
+    "id": "f8247da01e",
+    "url": "/daria-r26-series3-pre-review/patio/",
+    "name": "Patio",
+    "edition": "Series III · до ревью",
+    "group": "Промежуточные состояния",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": true
+  },
+  {
+    "id": "daa7f9b970",
+    "url": "/daria-r26-series3-pre-review/linea/",
+    "name": "Linea",
+    "edition": "Series III · до ревью",
+    "group": "Промежуточные состояния",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": true
+  },
+  {
+    "id": "7e404a2156",
+    "url": "/daria-r26-series3-pre-review/cala/",
+    "name": "Cala",
+    "edition": "Series III · до ревью",
+    "group": "Промежуточные состояния",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": true
+  },
+  {
+    "id": "18762129db",
+    "url": "/daria-r26-forma-r2-pre-review/forma/",
+    "name": "Forma",
+    "edition": "Forma R2 · до исправлений ревью",
+    "group": "Промежуточные состояния",
+    "description": "С присланными изображениями Дарьи.",
+    "intermediate": true
+  },
+  {
+    "id": "84186d57c6",
+    "url": "/daria-r26-v7-before-qa/?theme=1#variant-1",
+    "name": "Светлый",
+    "edition": "v7 · до QA (восстановлено)",
+    "group": "Промежуточные состояния",
+    "description": "Восстановленная сборка с данными из сохранённого исходника; точный API-снимок момента показа отсутствует.",
+    "intermediate": true
+  },
+  {
+    "id": "7c1dcf1c01",
+    "url": "/daria-r26-v7-before-qa/?theme=2#variant-2",
+    "name": "Морской",
+    "edition": "v7 · до QA (восстановлено)",
+    "group": "Промежуточные состояния",
+    "description": "Восстановленная сборка с данными из сохранённого исходника; точный API-снимок момента показа отсутствует.",
+    "intermediate": true
+  },
+  {
+    "id": "9c488a6597",
+    "url": "/daria-r26-v7-before-qa/?theme=3#variant-3",
+    "name": "Private",
+    "edition": "v7 · до QA (восстановлено)",
+    "group": "Промежуточные состояния",
+    "description": "Восстановленная сборка с данными из сохранённого исходника; точный API-снимок момента показа отсутствует.",
+    "intermediate": true
+  },
+  {
+    "id": "1c1d96cdde",
+    "url": "/daria-r26-v9-first-render/?theme=1#variant-1",
+    "name": "Светлый",
+    "edition": "v9 · первая сборка (восстановлено)",
+    "group": "Промежуточные состояния",
+    "description": "Восстановленная сборка с данными из сохранённого исходника; точный API-снимок момента показа отсутствует.",
+    "intermediate": true
+  },
+  {
+    "id": "b9b1d56baa",
+    "url": "/daria-r26-v9-first-render/?theme=2#variant-2",
+    "name": "Морской",
+    "edition": "v9 · первая сборка (восстановлено)",
+    "group": "Промежуточные состояния",
+    "description": "Восстановленная сборка с данными из сохранённого исходника; точный API-снимок момента показа отсутствует.",
+    "intermediate": true
+  },
+  {
+    "id": "707463f851",
+    "url": "/daria-r26-v9-first-render/?theme=3#variant-3",
+    "name": "Private",
+    "edition": "v9 · первая сборка (восстановлено)",
+    "group": "Промежуточные состояния",
+    "description": "Восстановленная сборка с данными из сохранённого исходника; точный API-снимок момента показа отсутствует.",
+    "intermediate": true
+  },
+  {
+    "id": "869f0e762c",
+    "url": "/daria-r26-v9-first-render/?theme=4#variant-4",
+    "name": "Ателье",
+    "edition": "v9 · первая сборка (восстановлено)",
+    "group": "Промежуточные состояния",
+    "description": "Восстановленная сборка с данными из сохранённого исходника; точный API-снимок момента показа отсутствует.",
+    "intermediate": true
+  },
+  {
+    "id": "59f5bfe14b",
+    "url": "/daria-r26-v9-first-render/?theme=5#variant-5",
+    "name": "Личный запрос",
+    "edition": "v9 · первая сборка (восстановлено)",
+    "group": "Промежуточные состояния",
+    "description": "Восстановленная сборка с данными из сохранённого исходника; точный API-снимок момента показа отсутствует.",
+    "intermediate": true
+  },
+  {
+    "id": "9470f4394a",
+    "url": "/daria-r26-v9-before-final/?theme=1#variant-1",
+    "name": "Светлый",
+    "edition": "v9 · до финальной проверки (восстановлено)",
+    "group": "Промежуточные состояния",
+    "description": "Восстановленная сборка с данными из сохранённого исходника; точный API-снимок момента показа отсутствует.",
+    "intermediate": true
+  },
+  {
+    "id": "5578617477",
+    "url": "/daria-r26-v9-before-final/?theme=2#variant-2",
+    "name": "Морской",
+    "edition": "v9 · до финальной проверки (восстановлено)",
+    "group": "Промежуточные состояния",
+    "description": "Восстановленная сборка с данными из сохранённого исходника; точный API-снимок момента показа отсутствует.",
+    "intermediate": true
+  },
+  {
+    "id": "0b5daf2409",
+    "url": "/daria-r26-v9-before-final/?theme=3#variant-3",
+    "name": "Private",
+    "edition": "v9 · до финальной проверки (восстановлено)",
+    "group": "Промежуточные состояния",
+    "description": "Восстановленная сборка с данными из сохранённого исходника; точный API-снимок момента показа отсутствует.",
+    "intermediate": true
+  },
+  {
+    "id": "a97061e3b9",
+    "url": "/daria-r26-v9-before-final/?theme=4#variant-4",
+    "name": "Ателье",
+    "edition": "v9 · до финальной проверки (восстановлено)",
+    "group": "Промежуточные состояния",
+    "description": "Восстановленная сборка с данными из сохранённого исходника; точный API-снимок момента показа отсутствует.",
+    "intermediate": true
+  },
+  {
+    "id": "e4cce9c495",
+    "url": "/daria-r26-v9-before-final/?theme=5#variant-5",
+    "name": "Личный запрос",
+    "edition": "v9 · до финальной проверки (восстановлено)",
+    "group": "Промежуточные состояния",
+    "description": "Восстановленная сборка с данными из сохранённого исходника; точный API-снимок момента показа отсутствует.",
+    "intermediate": true
+  }
+]

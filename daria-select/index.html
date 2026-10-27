@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><meta name="referrer" content="same-origin">
-<title>Выбор дизайна сайта Дарьи</title><link rel="stylesheet" href="/daria-select/viewer.css">
-<script defer src="/daria-select/viewer.js"></script>
+<title>Выбор дизайна сайта Дарьи</title><link rel="stylesheet" href="/daria-select/viewer.css?v=cloud-20261027-r1">
+<script type="module" src="/daria-select/viewer.js?v=cloud-20261027-r1"></script>
 </head>
 <body data-mode="review">
 <header class="toolbar">
@@ -17,11 +17,14 @@
     <div class="votes owner"><button id="no" aria-pressed="false">Не нравится</button><button id="yes" aria-pressed="false">Нравится</button><button id="undo" disabled title="Отменить последнюю оценку">Отменить</button></div>
     <p id="progress" class="progress owner"></p>
   </div>
-  <div class="saving owner"><span id="save-note">Выбор сохраняется в этом браузере. После оценки откроется следующий дизайн.</span><a href="/daria-review-20261026/">Старый список и админка</a></div>
+  <div class="cloud-bar owner" id="cloud-bar"><span id="cloud-status" role="status" aria-live="polite">Выбор пока только в этом браузере. Сохраните его на сайте для доступа с других устройств.</span><button id="cloud-connect">Сохранить на сайте</button><button id="cloud-conflicts" hidden>Сравнить оценки</button></div>
+  <div class="saving owner"><span id="save-note">После оценки откроется следующий дизайн. К выбору можно вернуться позже.</span><a href="/daria-review-20261026/">Старый список и админка</a></div>
 </header>
 <main id="stage"><div id="loading" role="status">Загружаем дизайн…</div><iframe id="preview" title="Предпросмотр дизайна" referrerpolicy="same-origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe><div id="empty" hidden><h2>В этой подборке пока нет вариантов</h2><p id="empty-text">Сначала отметьте понравившиеся дизайны.</p><button id="show-all" class="owner">Вернуться ко всем дизайнам</button></div></main>
 <div id="toast" role="status" aria-live="polite"></div>
 <dialog id="list-dialog" aria-labelledby="list-heading"><div class="dialog-head"><h2 id="list-heading">Все дизайны</h2><button data-close="list-dialog" aria-label="Закрыть список">Закрыть</button></div><div class="list-controls"><label class="search">Поиск по названию<input id="search" type="search" placeholder="Например, Светлый или Signature"></label><label class="owner filter">Показать<select id="filter"><option value="all">Все варианты</option><option value="unseen">Без оценки</option><option value="yes">Нравятся</option><option value="no">Не нравятся</option></select></label></div><p id="list-count"></p><div id="design-list"></div><p class="dialog-foot owner">Список включает ранние и промежуточные версии. «Не нравится» только ставит отметку — дизайн остаётся доступен.</p></dialog>
 <dialog id="share-dialog" aria-labelledby="share-heading"><div class="dialog-head"><h2 id="share-heading">Подборка для Дарьи</h2><button data-close="share-dialog">Закрыть</button></div><p>По этой ссылке будут только понравившиеся варианты — без ваших оценок остальных дизайнов.</p><p id="share-count"></p><label class="share-label">Ссылка на подборку<input id="share-url" readonly></label><div class="share-actions"><button id="copy" class="primary">Скопировать ссылку</button><a id="share-preview" class="button" target="_blank" rel="noopener">Посмотреть подборку</a></div><p class="muted">Ссылка фиксирует текущий выбор. Если отметите другие варианты, создайте новую ссылку. Скопированную ссылку можно также прислать сюда в чат.</p></dialog>
+<dialog id="conflict-dialog" aria-labelledby="conflict-heading"><div class="dialog-head"><h2 id="conflict-heading">Оценки на разных устройствах</h2><button data-close="conflict-dialog">Закрыть</button></div><p>Эти варианты были изменены и здесь, и на другом устройстве. Ниже можно выбрать, какую оценку оставить на сайте.</p><div id="conflict-list"></div></dialog>
+<dialog id="cloud-login-dialog" class="owner" aria-labelledby="cloud-login-heading"><div class="dialog-head"><h2 id="cloud-login-heading">Сохранение выбора на сайте</h2><button data-close="cloud-login-dialog" id="cloud-login-close">Закрыть</button></div><p id="cloud-login-summary"></p><p id="cloud-login-loading" role="status" hidden></p><iframe id="cloud-login-frame" title="Вход для сохранения выбора" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-forms"></iframe><p class="muted">После входа оценки будут сохраняться автоматически. Можно закрыть это окно — ваши отметки останутся в браузере.</p></dialog>
 <noscript>Для просмотра и сохранения выбора включите JavaScript. <a href="/daria-review-20261026/">Открыть полный список</a>.</noscript>
 </body></html>
