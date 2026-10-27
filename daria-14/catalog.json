@@ -1,0 +1,86 @@
+[
+  {
+    "id": "1132804995",
+    "name": "Светлый",
+    "description": "Светлая классика с крупным портретом",
+    "url": "/daria-r26-v9/?theme=1#variant-1"
+  },
+  {
+    "id": "c0fa36aeda",
+    "name": "Presence",
+    "description": "Личный образ и полноэкранная фотография",
+    "url": "/daria-review-20261026/new/series-04/02-presence/index.html"
+  },
+  {
+    "id": "d14b5d44ea",
+    "name": "Cala",
+    "description": "Светлая морская палитра и фотоколлаж",
+    "url": "/daria-r26-client-third/cala/"
+  },
+  {
+    "id": "0e2da1e68a",
+    "name": "Folio",
+    "description": "Тёплая редакционная подача",
+    "url": "/daria-r26-series2-r3/folio/"
+  },
+  {
+    "id": "ae3a9e3b56",
+    "name": "Forma",
+    "description": "Современная галерея и белое пространство",
+    "url": "/daria-r26-client-forma/forma/"
+  },
+  {
+    "id": "836378a68c",
+    "name": "Место для вашей жизни",
+    "description": "Крупная типографика и тёплые оттенки",
+    "url": "/daria-r26-signature-r1/"
+  },
+  {
+    "id": "0d6ca0337c",
+    "name": "Luz",
+    "description": "Спокойная светлая композиция",
+    "url": "/daria-r26-client-third/luz/"
+  },
+  {
+    "id": "2ce6693fce",
+    "name": "Морской",
+    "description": "Прохладная палитра и личный портрет",
+    "url": "/daria-r26-v9/?theme=2#variant-2"
+  },
+  {
+    "id": "7bba9b4aca",
+    "name": "Private",
+    "description": "Тёмно-зелёная классика",
+    "url": "/daria-r26-v9/?theme=3#variant-3"
+  },
+  {
+    "id": "0f502cc236",
+    "name": "Atlas",
+    "description": "Карта направлений и боковая навигация",
+    "url": "/daria-r26-client-second/atlas/"
+  },
+  {
+    "id": "966a6ed48d",
+    "name": "Atelier",
+    "description": "Архитектурная сетка и ясные акценты",
+    "url": "/daria-r26-client-second/atelier/"
+  },
+  {
+    "id": "5bdbbbcdb2",
+    "name": "Ателье",
+    "description": "Сдержанный гротеск и оливковые акценты",
+    "url": "/daria-r26-type-heritage/?theme=4"
+  },
+  {
+    "id": "4634ef3d69",
+    "name": "Pavilion",
+    "description": "Панорамная фотография на первом экране",
+    "url": "/daria-r26-series2-r3/pavilion/"
+  },
+  {
+    "id": "1ed8d0ccf1",
+    "name": "Linea",
+    "description": "Тёмная палитра и графичная композиция",
+    "url": "/daria-r26-client-third/linea/"
+  }
+]

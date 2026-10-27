@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="same-origin">
+  <title>Дарья Лемис — выбираем оформление сайта</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./review.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <a class="wordmark" href="#designs" aria-label="Дарья Лемис, выбрать дизайн">Дарья Лемис<span>Ваш сайт</span></a>
+    <nav class="view-tabs" role="tablist" aria-label="Раздел подборки">
+      <button role="tab" id="designs-tab" aria-controls="designs-panel" aria-selected="true" tabindex="0">Выбрать дизайн<span class="tab-count">14</span></button>
+      <button role="tab" id="site-tab" aria-controls="site-panel" aria-selected="false" tabindex="-1">Сайт и кабинет</button>
+    </nav>
+  </header>
+
+  <main id="designs-panel" role="tabpanel" aria-labelledby="designs-tab">
+    <section class="review-toolbar" aria-label="Выбор оформления">
+      <div class="design-line">
+        <div class="design-identity"><h1 id="design-name">Выбираем оформление</h1><p id="design-description">14 разных направлений для вашего сайта</p></div>
+        <div class="list-actions"><button id="list-open" class="quiet">Все <span>14</span></button><button id="liked-open" class="quiet">Нравятся <span id="liked-count">0</span></button><a id="original" class="icon-link" target="_blank" rel="noopener" aria-label="Открыть дизайн отдельно" title="Открыть дизайн отдельно"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5H5v14h14v-3M11 5h8v8M19 5 9 15"/></svg></a></div>
+      </div>
+      <div class="review-actions">
+        <div class="stepper"><button id="previous" class="arrow" aria-label="Предыдущий дизайн"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><span id="position" aria-live="polite">1 / 14</span><button id="next" class="arrow" aria-label="Следующий дизайн"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div>
+        <div class="vote-actions"><button id="no" aria-pressed="false">Не нравится</button><button id="yes" class="primary" aria-pressed="false">Нравится<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></button></div>
+        <button id="undo" class="text-button" disabled>Отменить</button>
+        <p id="progress">Оценено 0 из 14</p>
+      </div>
+      <div class="save-line" id="save-line"><span id="cloud-status" role="status" aria-live="polite">Отметьте то, что вам нравится. После оценки откроется следующий дизайн.</span><button id="cloud-connect" class="text-button">Сохранить на сайте</button><button id="cloud-conflicts" class="text-button" hidden>Сравнить оценки</button></div>
+    </section>
+    <section class="preview-stage" aria-label="Предпросмотр выбранного оформления">
+      <div id="loading" role="status">Загружаем дизайн…</div>
+      <iframe id="preview" title="Предпросмотр дизайна" referrerpolicy="same-origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+      <div id="empty" hidden><span class="eyebrow">Ваш выбор</span><h2 id="empty-title">Здесь появятся понравившиеся дизайны</h2><p>Можно вернуться ко всем направлениям и продолжить просмотр.</p><button id="show-all" class="primary">Посмотреть все 14</button></div>
+    </section>
+  </main>
+
+  <main id="site-panel" role="tabpanel" aria-labelledby="site-tab" hidden>
+    <div class="site-content">
+      <header class="site-intro"><p class="eyebrow">Сайт и управление</p><h1>«Светлый» и ваш<br>личный кабинет</h1><p>Исходное светлое оформление уже связано с кабинетом. Здесь можно посмотреть сайт и попробовать, как управлять его содержанием.</p></header>
+      <div class="site-pair">
+        <article class="site-card">
+          <div class="card-label"><span>01</span><span>Сайт</span></div>
+          <h2>Светлый</h2>
+          <a class="site-screen" href="https://daria-web-preview.up.railway.app/var1/?theme=1#variant-1" target="_blank" rel="noopener"><img src="/daria-site-admin/assets/site-light.png" width="1280" height="720" alt="Светлый сайт с фотографией Дарьи и предложением персонального поиска недвижимости" loading="lazy"></a>
+          <p>Главная страница, персональный запрос, эксклюзивные предложения и статьи. Изменения из кабинета относятся к этому сайту.</p>
+          <a class="button primary" href="https://daria-web-preview.up.railway.app/var1/?theme=1#variant-1" target="_blank" rel="noopener">Открыть сайт<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5H5v14h14v-3M11 5h8v8M19 5 9 15"/></svg></a>
+          <small>Открывается без пароля.</small>
+        </article>
+        <article class="site-card">
+          <div class="card-label"><span>02</span><span>Управление</span></div>
+          <h2>Личный кабинет</h2>
+          <a class="site-screen" href="/daria-site-admin/assets/admin-constructor.png" target="_blank" rel="noopener"><img src="/daria-site-admin/assets/admin-constructor.png" width="1280" height="720" alt="Экран личного кабинета: список разделов, редактор и предпросмотр сайта" loading="lazy"></a>
+          <p>Тексты, фотографии, разделы, объекты, статьи и заявки. Нажмите на изображение, чтобы рассмотреть кабинет до входа.</p>
+          <a class="button primary" href="https://daria-web-preview.up.railway.app/admin/" target="_blank" rel="noopener">Войти в кабинет<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5H5v14h14v-3M11 5h8v8M19 5 9 15"/></svg></a>
+          <small>Пароль для входа передан отдельно.</small>
+        </article>
+      </div>
+      <section class="connection-note"><div><p class="eyebrow">Как это связано</p><h2>Один сайт.<br>Один кабинет.</h2></div><div><p>Сначала изменения можно проверить в предпросмотре. На сайте они появятся после нажатия «Опубликовать» в кабинете.</p><p>14 направлений в соседнем разделе помогают выбрать оформление. Этот кабинет управляет только сайтом «Светлый», открываемым выше.</p><button id="back-to-designs" class="text-button">Вернуться к выбору дизайна<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></button></div></section>
+    </div>
+  </main>
+
+  <dialog id="list-dialog" aria-labelledby="list-heading">
+    <div class="dialog-head"><div><p class="eyebrow">14 направлений</p><h2 id="list-heading">Все дизайны</h2></div><button data-close="list-dialog" class="icon-button" aria-label="Закрыть список"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+    <div class="list-filters" role="group" aria-label="Показать варианты"><button data-filter="all" aria-pressed="true">Все 14</button><button data-filter="yes" aria-pressed="false">Нравятся</button><button data-filter="unseen" aria-pressed="false">Без оценки</button></div>
+    <div id="design-list"></div>
+    <p id="list-empty" hidden>Пока здесь нет вариантов. Посмотрите все направления, чтобы сделать выбор.</p>
+  </dialog>
+  <dialog id="conflict-dialog" aria-labelledby="conflict-heading"><div class="dialog-head"><h2 id="conflict-heading">Выбор на разных устройствах</h2><button data-close="conflict-dialog" class="icon-button" aria-label="Закрыть сравнение"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><p>Некоторые оценки отличаются. Выберите, какие сохранить.</p><div id="conflict-list"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript><p>Для перелистывания и отметок включите JavaScript. <a href="https://daria-web-preview.up.railway.app/var1/?theme=1#variant-1">Открыть сайт «Светлый»</a> · <a href="https://daria-web-preview.up.railway.app/admin/">Личный кабинет</a>.</p></noscript>
+</body>
+</html>
