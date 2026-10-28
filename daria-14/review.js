@@ -1,5 +1,7 @@
-import {SelectionCloud,CLOUD_KEY,OUTBOX_PREFIX} from './cloud-sync.mjs';
-import {LOCAL_KEY,BACKEND,readLocal,makeLogin,consumeCallback,cleanVotes} from './review-state.mjs';
+import {SelectionCloud,CLOUD_KEY,OUTBOX_PREFIX} from './cloud-sync.mjs?v=grouped-r2';
+import {LOCAL_KEY,BACKEND,readLocal,makeLogin,consumeCallback,cleanVotes} from './review-state.mjs?v=grouped-r2';
+
+import {buildGroups,filterGroups,resolveChoice,stepGroup,rateChoice,undoChoice} from './grouped-review.mjs?v=grouped-r2';
 
 const $=id=>document.getElementById(id);
 // The short-lived callback code must never stay in a copied page address.
@@ -10,11 +12,12 @@ try{storage=window.localStorage;}catch{
   persistent=false;const memory=new Map();
   storage={get length(){return memory.size},key:i=>[...memory.keys()][i]??null,getItem:k=>memory.get(k)??null,setItem:(k,v)=>memory.set(k,String(v)),removeItem:k=>memory.delete(k)};
 }
-let catalog=[],ids=[],votes={},current='',view='designs',filter='all',undo=[],cloud=null,cloudState=null,storageFailed=!persistent;
+let catalog=[],groups=[],ids=[],votes={},current='',view='designs',filter='all',undo=[],cloud=null,cloudState=null,storageFailed=!persistent;
 let toastTimer,loadTimer;
 const ratingLabel=value=>value==='yes'?'Нравится':value==='no'?'Не нравится':'Без оценки';
 const toast=text=>{$('toast').textContent=text;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').textContent='',3800);};
-const queue=()=>catalog.filter(item=>filter==='all'||(filter==='unseen'?!votes[item.id]:votes[item.id]===filter));
+const queue=()=>filterGroups(groups,votes,filter);
+const variantName=item=>item.variantLabel==='Основной'?item.groupName:`${item.groupName} · ${item.variantLabel}`;
 
 function drawCloud(){
   const state=cloudState;
@@ -22,7 +25,7 @@ function drawCloud(){
   if(storageFailed){
     $('cloud-status').textContent='Браузер не сохраняет отметки. Не закрывайте страницу; разрешите хранение данных для этого сайта.';
   }else if(state?.phase==='local'||!state){
-    $('cloud-status').textContent=Object.keys(votes).length?'Ваш выбор сохранён в этом браузере. Подключите сайт для доступа с других устройств.':'Отметьте то, что вам нравится. После оценки откроется следующий дизайн.';
+    $('cloud-status').textContent=Object.keys(votes).length?'Ваш выбор сохранён в этом браузере. Подключите сайт для доступа с других устройств.':'Отметьте то, что вам нравится. После оценки откроется следующее направление.';
   }else $('cloud-status').textContent=state.message;
   $('cloud-connect').textContent=state?.phase==='saved'?'Обновить':state?.phase==='offline'?'Повторить':state?.phase==='syncing'?'Сохраняем…':'Сохранить на сайте';
   $('cloud-connect').disabled=state?.phase==='syncing';
@@ -37,29 +40,49 @@ function store(){
 function counts(){
   const rated=catalog.filter(item=>votes[item.id]).length;
   $('liked-count').textContent=catalog.filter(item=>votes[item.id]==='yes').length;
-  $('progress').textContent=`Оценено ${rated} из ${catalog.length}`;
+  $('progress').textContent=`Оценено версий: ${rated} из ${catalog.length}`;
   $('undo').disabled=!undo.length;
 }
+function drawVariants(item){
+  const group=groups.find(group=>group.id===item.groupId);
+  const visible=queue().find(group=>group.id===item.groupId);
+  const options=$('variant-options');options.replaceChildren();options.hidden=group.items.length<2;
+  $('version-caption').textContent=group.items.length>1?`Открыта версия: ${item.variantLabel}`:'Один вариант в этом направлении';
+  for(const variant of visible?.items||[]){
+    const button=document.createElement('button');button.className='variant-button';
+    button.setAttribute('aria-pressed',variant.id===current);button.dataset.rating=votes[variant.id]||'';
+    const label=document.createElement('span');label.textContent=variant.variantLabel;
+    button.append(label);
+    if(votes[variant.id]){const status=document.createElement('span');status.className='variant-rating';status.textContent=ratingLabel(votes[variant.id]);button.append(status);}
+    button.setAttribute('aria-label',`${variant.variantLabel}: ${ratingLabel(votes[variant.id])}`);
+    button.addEventListener('click',()=>show(variant.id));options.append(button);
+  }
+}
 function show(id,writeHash=true,persist=true){
-  const list=queue(),item=list.find(item=>item.id===id)||list[0];
+  const list=queue(),item=resolveChoice(groups,votes,filter,id);
   counts();
   $('empty').hidden=!!item;$('preview').hidden=!item;$('original').hidden=!item;
   $('yes').disabled=$('no').disabled=!item;
   if(!item){
-    $('loading').hidden=true;$('position').textContent=`0 / 0`;
+    $('loading').hidden=true;$('position').textContent='0 / 0';
     $('design-name').textContent=filter==='yes'?'Понравившиеся':'Все варианты оценены';
-    $('design-description').textContent='Вернитесь ко всем 14 направлениям';
-    $('empty-title').textContent=filter==='yes'?'Здесь появятся понравившиеся дизайны':'Вы посмотрели все направления';
-    $('previous').disabled=$('next').disabled=true;return;
+    $('design-description').textContent='Вернитесь ко всем направлениям';
+    $('empty-title').textContent=filter==='yes'?'Здесь появятся понравившиеся дизайны':'Вы посмотрели все варианты';
+    $('variant-options').replaceChildren();$('version-caption').textContent='';
+    $('previous').disabled=$('next').disabled=true;
+    $('yes').setAttribute('aria-pressed','false');$('no').setAttribute('aria-pressed','false');
+    if(persist)store();return;
   }
   current=item.id;
-  const index=list.findIndex(item=>item.id===current);
-  $('design-name').textContent=item.name;$('design-description').textContent=item.description;
+  const index=list.findIndex(group=>group.id===item.groupId);
+  $('design-name').textContent=item.groupName;$('design-description').textContent=item.groupDescription;
   $('position').textContent=`${index+1} / ${list.length}`;
+  $('position').setAttribute('aria-label',`Направление ${index+1} из ${list.length}`);
   $('previous').disabled=index===0;$('next').disabled=index===list.length-1;
   $('yes').setAttribute('aria-pressed',votes[current]==='yes');
   $('no').setAttribute('aria-pressed',votes[current]==='no');
-  $('original').href=item.url;$('preview').title=`Дизайн «${item.name}»`;
+  $('original').href=item.url;$('preview').title=`Дизайн «${variantName(item)}»`;
+  drawVariants(item);
   if($('preview').getAttribute('src')!==item.url){
     $('loading').textContent='Загружаем дизайн…';$('loading').hidden=false;clearTimeout(loadTimer);
     $('preview').src=item.url;
@@ -68,7 +91,7 @@ function show(id,writeHash=true,persist=true){
   if(writeHash&&view==='designs')history.replaceState(null,'','#'+current);
   if(persist)store();
 }
-function move(step){const list=queue(),index=list.findIndex(item=>item.id===current);if(list[index+step])show(list[index+step].id);}
+function move(step){const item=stepGroup(groups,votes,filter,current,step);if(item)show(item.id);}
 function setView(next,focus=false){
   view=next==='site'?'site':'designs';
   for(const name of ['designs','site']){
@@ -80,23 +103,30 @@ function setView(next,focus=false){
   store();
 }
 function vote(value){
-  const list=queue(),index=list.findIndex(item=>item.id===current);if(index<0)return;
-  const id=current,next=list[index+1]?.id;
-  undo.push({id,previous:votes[id]??null,filter});votes[id]=value;store();cloud?.mark(id,value);
-  show(next||id);
-  toast((value==='yes'?'Добавлено в понравившиеся':'Отмечено: не нравится')+(index===list.length-1?'. Это последний дизайн в списке.':''));
+  const choice=rateChoice(groups,{votes,current,filter},value);if(!choice)return;
+  const id=current;undo.push(choice.undo);votes=choice.votes;store();cloud?.mark(id,value);
+  show(choice.nextId);
+  toast((value==='yes'?'Версия добавлена в понравившиеся':'Версия отмечена: не нравится')+(choice.atEnd?'. Это последнее направление в списке.':''));
 }
 function renderList(){
-  $('list-heading').textContent=filter==='yes'?'Понравившиеся дизайны':filter==='unseen'?'Ещё не оценены':'Все дизайны';
+  $('list-heading').textContent=filter==='yes'?'Понравившиеся версии':filter==='unseen'?'Ещё не оценены':'Все направления';
   document.querySelectorAll('[data-filter]').forEach(button=>button.setAttribute('aria-pressed',button.dataset.filter===filter));
   const items=queue();$('design-list').replaceChildren();$('list-empty').hidden=!!items.length;
-  for(const item of items){
-    const row=document.createElement('button');row.className='design-row';row.setAttribute('aria-current',item.id===current?'true':'false');
-    const number=document.createElement('span');number.className='row-number';number.textContent=String(catalog.indexOf(item)+1).padStart(2,'0');
-    const text=document.createElement('span'),name=document.createElement('span'),detail=document.createElement('span');
-    name.className='row-name';name.textContent=item.name;detail.className='row-detail';detail.textContent=item.description;text.append(name,detail);
-    const status=document.createElement('span');status.className='row-status '+(votes[item.id]||'');status.textContent=ratingLabel(votes[item.id]);
-    row.append(number,text,status);row.addEventListener('click',()=>{show(item.id);$('list-dialog').close();});$('design-list').append(row);
+  $('list-summary').textContent=`Направления: ${items.length} · версии: ${items.reduce((sum,group)=>sum+group.items.length,0)}`;
+  for(const group of items){
+    const section=document.createElement('section');section.className='list-group';
+    const heading=document.createElement('div');heading.className='group-heading';
+    const number=document.createElement('span');number.className='row-number';number.textContent=String(groups.findIndex(item=>item.id===group.id)+1).padStart(2,'0');
+    const text=document.createElement('div'),name=document.createElement('h3'),detail=document.createElement('p');
+    name.textContent=group.name;detail.textContent=group.description;text.append(name,detail);heading.append(number,text);section.append(heading);
+    for(const item of group.items){
+      const row=document.createElement('button');row.className='design-row';row.setAttribute('aria-current',item.id===current?'true':'false');
+      const label=document.createElement('span');label.className='row-name';label.textContent=item.variantLabel==='Основной'?'Открыть направление':item.variantLabel;
+      const status=document.createElement('span');status.className='row-status '+(votes[item.id]||'');status.textContent=ratingLabel(votes[item.id]);
+      row.setAttribute('aria-label',`${group.name} · ${item.variantLabel}: ${ratingLabel(votes[item.id])}`);
+      row.append(label,status);row.addEventListener('click',()=>{show(item.id);$('list-dialog').close();});section.append(row);
+    }
+    $('design-list').append(section);
   }
 }
 function openList(nextFilter){filter=nextFilter;renderList();$('list-dialog').showModal();}
@@ -105,7 +135,7 @@ function renderConflicts(){
   for(const conflict of cloud?.conflicts||[]){
     const item=catalog.find(item=>item.id===conflict.id);if(!item)continue;
     const row=document.createElement('section');row.className='conflict-row';
-    const title=document.createElement('h3');title.textContent=item.name;
+    const title=document.createElement('h3');title.textContent=variantName(item);
     const description=document.createElement('p');description.textContent=`Здесь: ${ratingLabel(conflict.local)}. На сайте: ${ratingLabel(conflict.remote)}.`;
     const actions=document.createElement('div');actions.className='conflict-actions';
     for(const [label,useLocal]of [['Оставить мою оценку',true],['Взять оценку с сайта',false]]){
@@ -118,7 +148,7 @@ function renderConflicts(){
 
 $('previous').addEventListener('click',()=>move(-1));$('next').addEventListener('click',()=>move(1));
 $('yes').addEventListener('click',()=>vote('yes'));$('no').addEventListener('click',()=>vote('no'));
-$('undo').addEventListener('click',()=>{const last=undo.pop();if(!last)return;if(last.previous)votes[last.id]=last.previous;else delete votes[last.id];store();cloud?.mark(last.id,last.previous);filter=last.filter;show(last.id);toast('Последняя оценка отменена');});
+$('undo').addEventListener('click',()=>{const last=undo.pop();if(!last)return;const restored=undoChoice(votes,last);votes=restored.votes;filter=restored.filter;store();cloud?.mark(last.id,last.previous);show(restored.current);toast('Последняя оценка отменена');});
 $('list-open').addEventListener('click',()=>openList('all'));$('liked-open').addEventListener('click',()=>openList('yes'));
 $('show-all').addEventListener('click',()=>{filter='all';show(current);});
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{filter=button.dataset.filter;renderList();}));
@@ -135,7 +165,7 @@ window.addEventListener('keydown',event=>{
 });
 window.addEventListener('hashchange',()=>{
   if(location.hash==='#site'){setView('site');return;}
-  const id=location.hash.slice(1);if(ids.includes(id)){view='designs';filter='all';setView('designs');show(id,false);}
+  const id=location.hash.slice(1);if(ids.includes(id)){current=id;view='designs';filter='all';setView('designs');show(id,false);}
 });
 $('preview').addEventListener('load',()=>{
   clearTimeout(loadTimer);$('loading').hidden=true;
@@ -167,9 +197,10 @@ window.addEventListener('storage',event=>{
 });
 
 async function init(){
-  const response=await fetch('./catalog.json',{cache:'no-store'});if(!response.ok)throw Error('Не удалось загрузить список дизайнов. Обновите страницу.');
+  const response=await fetch('./catalog.json?v=grouped-r2',{cache:'no-store'});if(!response.ok)throw Error('Не удалось загрузить список дизайнов. Обновите страницу.');
   catalog=await response.json();
-  if(!Array.isArray(catalog)||catalog.length!==14||new Set(catalog.map(item=>item.id)).size!==14||catalog.some(item=>!/^\w{10}$/.test(item.id)||typeof item.name!=='string'||typeof item.description!=='string'||typeof item.url!=='string'||!item.url.startsWith('/')||item.url.startsWith('//')))throw Error('Список дизайнов пока недоступен. Обновите страницу.');
+  groups=buildGroups(catalog);
+  document.querySelectorAll('[data-group-count]').forEach(element=>element.textContent=groups.length);
   ids=catalog.map(item=>item.id);const local=readLocal(storage,ids),linkedDesign=ids.includes(location.hash.slice(1));votes=local.votes;current=linkedDesign?location.hash.slice(1):local.current;view=location.hash==='#site'?'site':linkedDesign?'designs':local.view;
   cloud=new SelectionCloud({ids,storage,backend:BACKEND,locks:navigator.locks,getLocalVotes:()=>votes,onVotes:next=>{votes=next;show(current);if($('list-dialog').open)renderList();},onStatus:state=>{cloudState=state;drawCloud();}});
   setView(view);show(current);

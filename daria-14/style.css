@@ -4,3 +4,57 @@
 @media(max-width:640px){.app-header{padding:8px 12px;gap:8px;align-items:center}.wordmark{font-size:16px;max-width:85px;white-space:normal;line-height:1.05}.view-tabs{gap:0;padding:2px}.view-tabs button{min-height:36px;padding:8px 10px;font-size:11px}.tab-count{margin-left:5px;font-size:9px}.review-toolbar{padding:10px 12px 5px}.design-line{align-items:center;gap:8px}.design-identity h1{font-size:18px;line-height:1.2;margin-bottom:0}.design-identity p{display:none}.list-actions{gap:4px}.quiet{min-height:35px;padding:7px 9px;font-size:11px}.quiet span{margin-left:3px}.icon-link{width:30px;min-height:36px}.icon-link svg{width:17px;height:17px}.review-actions{display:grid;grid-template-columns:128px minmax(0,1fr) auto;gap:6px;margin-top:9px}.stepper{gap:1px}.stepper button{padding:7px;min-height:39px}.stepper svg{width:17px}#position{min-width:51px;font-size:12px}.vote-actions{gap:5px;justify-content:flex-end}.vote-actions button{min-width:0;min-height:39px;padding:9px 10px;font-size:12px;gap:5px}.vote-actions svg{width:15px;height:15px}#undo{grid-column:3;grid-row:2;min-height:20px;padding:0;font-size:10px}#progress{grid-column:1/3;grid-row:2;justify-self:start;font-size:10px;margin:0}.save-line{gap:10px;margin-top:6px;padding-top:3px;font-size:10px;min-height:30px}.save-line button{font-size:10px;min-height:28px;padding:5px 0}#cloud-status{line-height:1.35}.site-content{padding:30px 18px 44px}.site-intro{display:block;margin-bottom:28px}.site-intro h1{font-size:37px;margin-bottom:20px}.site-intro>p:last-child{font-size:15px;line-height:1.6}.site-pair{display:block}.site-card{display:flex;flex-direction:column;gap:17px;padding:20px;margin-bottom:16px}.site-card h2{font-size:23px}.site-card>p{font-size:14px}.site-card small{font-size:11px}.connection-note{display:block;margin-top:30px;padding-top:28px}.connection-note h2{font-size:29px;margin-bottom:22px}.connection-note p:not(.eyebrow){font-size:14px}.dialog-head{gap:12px}.dialog-head h2{font-size:23px}dialog{padding:18px;width:calc(100vw - 20px)}.design-row{grid-template-columns:22px minmax(0,1fr) 72px;gap:8px;padding:12px 9px}.row-name{font-size:15px}.row-detail{font-size:11px}.row-status{font-size:10px}.list-filters{gap:5px}.list-filters button{padding:8px 10px;font-size:11px}#design-list{max-height:60dvh}#toast{bottom:12px;font-size:12px;padding:10px 14px}}
 @media(max-width:375px){.app-header{padding-inline:10px}.wordmark{font-size:15px;max-width:75px}.view-tabs button{padding-inline:8px;font-size:10px}.review-toolbar{padding-inline:10px}.design-line{align-items:start}.design-identity h1{font-size:16px}.list-actions{gap:2px}.quiet{padding-inline:7px;font-size:10px}.icon-link{width:25px}.review-actions{grid-template-columns:109px minmax(0,1fr) 0;gap:4px}.stepper button{padding:5px}#position{min-width:47px;font-size:11px}.vote-actions{grid-column:2/4}.vote-actions button{padding-inline:8px;font-size:11px}.vote-actions svg{display:none}#undo{grid-column:2/4;justify-self:end}#progress{grid-column:1/3}.save-line{flex-wrap:wrap;gap:0 12px}#cloud-status{flex-basis:100%}.save-line button{min-height:25px}.site-intro h1{font-size:32px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* Grouped browsing keeps related versions outside the next/previous sequence. */
+.variant-line{display:flex;align-items:center;gap:15px;margin-top:10px;min-width:0}
+.variant-options{display:flex;gap:6px;min-width:0}
+.variant-button{display:flex;align-items:center;gap:8px;min-height:34px;padding:7px 12px;font-size:12px;white-space:normal;text-align:left}
+.variant-button[aria-pressed=true]{background:#e7eddf;border-color:#6e8a67;box-shadow:inset 0 0 0 1px #6e8a67}
+.variant-rating{font-size:10px;color:#52624f}
+.variant-button[data-rating=yes] .variant-rating{color:#28673a}
+.variant-button[data-rating=no] .variant-rating{color:#8b5542}
+.version-caption{margin:0;font-size:11px;line-height:1.4;color:var(--muted)}
+.review-guidance{display:flex;flex-wrap:wrap;justify-content:space-between;gap:3px 18px;margin-top:8px;color:var(--muted);font-size:11px;line-height:1.4}
+.review-guidance p{margin:0}
+.save-line{margin-top:7px}
+#design-list{gap:16px}
+.list-group{border:1px solid var(--line);border-radius:7px;padding:14px}
+.group-heading{display:grid;grid-template-columns:25px minmax(0,1fr);gap:10px;align-items:baseline;margin-bottom:10px}
+.group-heading h3{font-size:17px;font-weight:500;line-height:1.3;margin:0 0 4px}
+.group-heading p{font-size:12px;line-height:1.45;color:var(--muted);margin:0}
+.list-group .design-row{grid-template-columns:minmax(0,1fr) 90px;gap:12px;min-height:42px;margin-top:5px;padding:10px 12px}
+.list-group .row-name{font-size:13px;font-weight:400}
+.list-group .row-status{font-size:11px}
+@media(max-width:900px){.review-actions{gap:10px}.vote-actions button{min-width:110px}.review-guidance{font-size:10px}}
+@media(max-width:640px){
+  .design-line{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center}
+  .design-identity h1{font-size:17px;line-height:1.15}
+  .variant-line{display:block;margin-top:8px}
+  .variant-options{display:flex;gap:4px}
+  .variant-button{flex:1;justify-content:center;flex-direction:column;gap:2px;min-height:34px;padding:6px 8px;font-size:11px;line-height:1.2;text-align:center}
+  .variant-rating{font-size:9px}
+  .version-caption{font-size:10px;margin-top:5px}
+  .variant-options:not([hidden])+.version-caption{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+  .review-actions{grid-template-columns:118px minmax(0,1fr) auto;gap:5px;margin-top:8px}
+  .vote-actions button{min-width:0;min-height:38px;padding:8px 9px;font-size:11px}
+  .review-guidance{display:block;font-size:10px;line-height:1.3;margin-top:5px}
+  .review-guidance p+p{margin-top:3px}
+  .save-line{margin-top:5px}
+  .list-group{padding:11px}
+  .group-heading{grid-template-columns:20px minmax(0,1fr);gap:7px}
+  .group-heading h3{font-size:16px}
+  .group-heading p{font-size:11px}
+  .list-group .design-row{grid-template-columns:minmax(0,1fr) 77px;gap:8px;padding:10px}
+  .list-group .row-name{font-size:12px}
+  .list-group .row-status{font-size:10px}
+  #progress{font-size:9px}
+}
+@media(max-width:375px){
+  .design-identity h1{font-size:15px}
+  .review-actions{grid-template-columns:104px minmax(0,1fr) 0;gap:4px}
+  .vote-actions button{padding-inline:7px;font-size:10px}
+  .variant-button{padding-inline:6px;font-size:10px}
+  .review-guidance{font-size:9px}
+  .save-line{flex-wrap:nowrap;gap:8px}
+  #cloud-status{flex-basis:auto}
+}

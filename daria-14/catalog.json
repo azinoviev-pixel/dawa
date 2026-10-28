@@ -3,84 +3,210 @@
     "id": "1132804995",
     "name": "Светлый",
     "description": "Светлая классика с крупным портретом",
-    "url": "/daria-r26-v9/?theme=1#variant-1"
-  },
-  {
-    "id": "c0fa36aeda",
-    "name": "Presence",
-    "description": "Личный образ и полноэкранная фотография",
-    "url": "/daria-review-20261026/new/series-04/02-presence/index.html"
-  },
-  {
-    "id": "d14b5d44ea",
-    "name": "Cala",
-    "description": "Светлая морская палитра и фотоколлаж",
-    "url": "/daria-r26-client-third/cala/"
-  },
-  {
-    "id": "0e2da1e68a",
-    "name": "Folio",
-    "description": "Тёплая редакционная подача",
-    "url": "/daria-r26-series2-r3/folio/"
-  },
-  {
-    "id": "ae3a9e3b56",
-    "name": "Forma",
-    "description": "Современная галерея и белое пространство",
-    "url": "/daria-r26-client-forma/forma/"
-  },
-  {
-    "id": "836378a68c",
-    "name": "Место для вашей жизни",
-    "description": "Крупная типографика и тёплые оттенки",
-    "url": "/daria-r26-signature-r1/"
-  },
-  {
-    "id": "0d6ca0337c",
-    "name": "Luz",
-    "description": "Спокойная светлая композиция",
-    "url": "/daria-r26-client-third/luz/"
+    "url": "/daria-r26-v9/?theme=1#variant-1",
+    "groupId": "portrait-classic",
+    "groupName": "Классика с портретом",
+    "groupDescription": "Крупный портрет и классическая типографика",
+    "variantLabel": "Светлый"
   },
   {
     "id": "2ce6693fce",
     "name": "Морской",
     "description": "Прохладная палитра и личный портрет",
-    "url": "/daria-r26-v9/?theme=2#variant-2"
+    "url": "/daria-r26-v9/?theme=2#variant-2",
+    "groupId": "portrait-classic",
+    "groupName": "Классика с портретом",
+    "groupDescription": "Крупный портрет и классическая типографика",
+    "variantLabel": "Морской"
   },
   {
     "id": "7bba9b4aca",
     "name": "Private",
     "description": "Тёмно-зелёная классика",
-    "url": "/daria-r26-v9/?theme=3#variant-3"
+    "url": "/daria-r26-v9/?theme=3#variant-3",
+    "groupId": "portrait-classic",
+    "groupName": "Классика с портретом",
+    "groupDescription": "Крупный портрет и классическая типографика",
+    "variantLabel": "Тёмный"
+  },
+  {
+    "id": "5a5d4e1730",
+    "name": "Портрет в рамке",
+    "description": "Спокойный масштаб текста и фотография с полями",
+    "url": "/daria-r26-v11-prestructure/?theme=1#variant-1",
+    "groupId": "portrait-frame",
+    "groupName": "Портрет в рамке",
+    "groupDescription": "Спокойный масштаб текста и фотография с полями",
+    "variantLabel": "Светлый"
+  },
+  {
+    "id": "88ae1ea169",
+    "name": "Портрет в рамке",
+    "description": "Спокойный масштаб текста и фотография с полями",
+    "url": "/daria-r26-v11-prestructure/?theme=3#variant-3",
+    "groupId": "portrait-frame",
+    "groupName": "Портрет в рамке",
+    "groupDescription": "Спокойный масштаб текста и фотография с полями",
+    "variantLabel": "Тёмный"
+  },
+  {
+    "id": "c0fa36aeda",
+    "name": "Presence",
+    "description": "Личный образ и полноэкранная фотография",
+    "url": "/daria-review-20261026/new/series-04/02-presence/index.html",
+    "groupId": "presence",
+    "groupName": "Presence",
+    "groupDescription": "Личный образ и полноэкранная фотография",
+    "variantLabel": "Основной"
+  },
+  {
+    "id": "d14b5d44ea",
+    "name": "Cala",
+    "description": "Светлая морская палитра и фотоколлаж",
+    "url": "/daria-r26-client-third/cala/",
+    "groupId": "cala",
+    "groupName": "Cala",
+    "groupDescription": "Светлая морская палитра и фотоколлаж",
+    "variantLabel": "Основной"
+  },
+  {
+    "id": "60d80341b6",
+    "name": "Folio — разворот",
+    "description": "Большая архитектурная фотография и отдельная колонка с портретом",
+    "url": "/daria-r26-series2-r2/folio/",
+    "groupId": "folio-spread",
+    "groupName": "Folio — разворот",
+    "groupDescription": "Большая архитектурная фотография и отдельная колонка с портретом",
+    "variantLabel": "Основной"
+  },
+  {
+    "id": "0e2da1e68a",
+    "name": "Folio",
+    "description": "Тёплая редакционная подача",
+    "url": "/daria-r26-series2-r3/folio/",
+    "groupId": "folio-dossier",
+    "groupName": "Folio — досье",
+    "groupDescription": "Текст и небольшой портрет рядом с крупной фотографией",
+    "variantLabel": "Основной"
+  },
+  {
+    "id": "ae3a9e3b56",
+    "name": "Forma",
+    "description": "Современная галерея и белое пространство",
+    "url": "/daria-r26-client-forma/forma/",
+    "groupId": "forma",
+    "groupName": "Forma",
+    "groupDescription": "Современная галерея и белое пространство",
+    "variantLabel": "Основной"
+  },
+  {
+    "id": "836378a68c",
+    "name": "Место для вашей жизни",
+    "description": "Крупная типографика и тёплые оттенки",
+    "url": "/daria-r26-signature-r1/",
+    "groupId": "signature",
+    "groupName": "Место для вашей жизни",
+    "groupDescription": "Крупная типографика и тёплые оттенки",
+    "variantLabel": "Основной"
+  },
+  {
+    "id": "0d6ca0337c",
+    "name": "Luz",
+    "description": "Спокойная светлая композиция",
+    "url": "/daria-r26-client-third/luz/",
+    "groupId": "luz",
+    "groupName": "Luz",
+    "groupDescription": "Спокойная светлая композиция",
+    "variantLabel": "Основной"
   },
   {
     "id": "0f502cc236",
     "name": "Atlas",
     "description": "Карта направлений и боковая навигация",
-    "url": "/daria-r26-client-second/atlas/"
+    "url": "/daria-r26-client-second/atlas/",
+    "groupId": "atlas",
+    "groupName": "Atlas",
+    "groupDescription": "Боковая навигация и выбор направления поиска",
+    "variantLabel": "Карта"
+  },
+  {
+    "id": "b390692f36",
+    "name": "Atlas",
+    "description": "Боковая навигация и выбор направления поиска",
+    "url": "/daria-r26-series2-r1/atlas/",
+    "groupId": "atlas",
+    "groupName": "Atlas",
+    "groupDescription": "Боковая навигация и выбор направления поиска",
+    "variantLabel": "Список регионов"
   },
   {
     "id": "966a6ed48d",
     "name": "Atelier",
     "description": "Архитектурная сетка и ясные акценты",
-    "url": "/daria-r26-client-second/atelier/"
+    "url": "/daria-r26-client-second/atelier/",
+    "groupId": "atelier-architecture",
+    "groupName": "Atelier — архитектурный",
+    "groupDescription": "Архитектурная сетка и ясные акценты",
+    "variantLabel": "Компактный"
+  },
+  {
+    "id": "28008ccdb2",
+    "name": "Atelier — архитектурный",
+    "description": "Архитектурная сетка и ясные акценты",
+    "url": "/daria-r26-series2-r1/atelier/",
+    "groupId": "atelier-architecture",
+    "groupName": "Atelier — архитектурный",
+    "groupDescription": "Архитектурная сетка и ясные акценты",
+    "variantLabel": "Развёрнутый"
   },
   {
     "id": "5bdbbbcdb2",
     "name": "Ателье",
     "description": "Сдержанный гротеск и оливковые акценты",
-    "url": "/daria-r26-type-heritage/?theme=4"
+    "url": "/daria-r26-type-heritage/?theme=4",
+    "groupId": "atelier-type",
+    "groupName": "Ателье — типографический",
+    "groupDescription": "Гротеск, оливковые акценты и выразительный заголовок",
+    "variantLabel": "Спокойный"
+  },
+  {
+    "id": "52955b4117",
+    "name": "Ателье — типографический",
+    "description": "Гротеск, оливковые акценты и выразительный заголовок",
+    "url": "/daria-r26-v9/?theme=4#variant-4",
+    "groupId": "atelier-type",
+    "groupName": "Ателье — типографический",
+    "groupDescription": "Гротеск, оливковые акценты и выразительный заголовок",
+    "variantLabel": "Крупный заголовок"
   },
   {
     "id": "4634ef3d69",
     "name": "Pavilion",
     "description": "Панорамная фотография на первом экране",
-    "url": "/daria-r26-series2-r3/pavilion/"
+    "url": "/daria-r26-series2-r3/pavilion/",
+    "groupId": "pavilion",
+    "groupName": "Pavilion",
+    "groupDescription": "Панорамная фотография на первом экране",
+    "variantLabel": "Компактный"
+  },
+  {
+    "id": "bca832312b",
+    "name": "Pavilion",
+    "description": "Панорамная фотография на первом экране",
+    "url": "/daria-r26-series2-r2/pavilion/",
+    "groupId": "pavilion",
+    "groupName": "Pavilion",
+    "groupDescription": "Панорамная фотография на первом экране",
+    "variantLabel": "Развёрнутый"
   },
   {
     "id": "1ed8d0ccf1",
     "name": "Linea",
     "description": "Тёмная палитра и графичная композиция",
-    "url": "/daria-r26-client-third/linea/"
+    "url": "/daria-r26-client-third/linea/",
+    "groupId": "linea",
+    "groupName": "Linea",
+    "groupDescription": "Тёмная палитра и графичная композиция",
+    "variantLabel": "Основной"
   }
 ]
